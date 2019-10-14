@@ -15,25 +15,23 @@ public class Get_url {
 		
 		try {
 			
-			BufferedReader user_input = new BufferedReader(new InputStreamReader(System.in));
-			
-			URL my_url = new URL("https://github.com/lillo/dpiot-course/blob/master/ex1/exercises1.org");
+			URL my_url = new URL(args[0]);
 			URLConnection my_connection = my_url.openConnection();
 			my_connection.connect();
 			BufferedReader in = new BufferedReader(new InputStreamReader(my_connection.getInputStream()));
-			String input = "";
 			
-			String regex = "<a href\\s?=\\s?\"([^\"]+)\">";
-		    Pattern pattern = Pattern.compile(regex);
-		    Matcher matcher = pattern.matcher(input);
-		    
-			while ((input = in.readLine()) != null)
-				matcher = pattern.matcher(input);
-			 	String wholething = matcher.group();
-			 	String link = matcher.group(1);
-				System.out.println(link);
-			in.close();
-
+			String input;
+			String url = null;
+			Matcher m = null;
+			Pattern p = Pattern.compile("href=\"https(.*?)\"");
+			
+			while((input = in.readLine()) != null) {
+				m = p.matcher(input);
+				if (m.find()) {
+					url = m.group(1);
+					System.out.println("https" + url);
+				}
+			}	
 			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
