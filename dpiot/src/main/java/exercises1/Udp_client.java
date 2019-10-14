@@ -9,7 +9,7 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-public class udp_client {
+public class Udp_client {
 
 	public static void main(String[] args) {
 		

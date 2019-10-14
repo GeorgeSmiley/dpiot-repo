@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class udp_server {
+public class Udp_server {
 
 	public static void main(String[] args) {
 		
