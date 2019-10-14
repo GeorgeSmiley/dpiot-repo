@@ -5,6 +5,10 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class udp_server {
 
@@ -13,21 +17,28 @@ public class udp_server {
 		try {
 			
 			DatagramSocket sock = new DatagramSocket(9999);
-			int buffer_size = 1024;
-			byte buffer_req[] = new byte[buffer_size];
-			byte buffer_res[] = new byte[buffer_size]; 
+			byte buffer_req[] = new byte[1024];
+			byte buffer_res[] = new byte[1024]; 
 			
-			DatagramPacket request = new DatagramPacket(buffer_req, buffer_size);
-			sock.receive(request);
-			DatagramPacket response  = new DatagramPacket(buffer_res, buffer_size, request.getAddress(), request.getPort());
-			sock.send(response);
+			System.out.println("Waiting fo connections");
 			
+			while(true) {
+				DatagramPacket request = new DatagramPacket(buffer_req, buffer_req.length);
+				sock.receive(request);
+				String sentence = new String(request.getData());
+				System.out.println("Received Time ID: " + sentence);
+				
+				Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(sentence),Locale.ITALY);
+				Date today = calendar.getTime();
+				buffer_res = today.toString().getBytes();
+				
+				DatagramPacket response  = new DatagramPacket(buffer_res, buffer_res.length, request.getAddress(), request.getPort());
+				sock.send(response);
+			}
 			
 		} catch (SocketException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
