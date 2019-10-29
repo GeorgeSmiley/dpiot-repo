@@ -1,0 +1,6 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Communication Mechanisms}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Basi}{1}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Middleware}{1}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Coordinazione diretta}{3}{subsubsection.1.1.2}
+\contentsline {subsection}{\numberline {1.2}Remote Procedure Call}{3}{subsection.1.2}
