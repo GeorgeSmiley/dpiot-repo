@@ -75,7 +75,19 @@
 	\subsection{Remote Procedure Call}
 		Molti sistemi distribuiti sono basati sullo scambio di messaggi tra processi, tuttavia questo tipo di approccio non permette di nascondere la comunicazione tra le componenti in modo da rendere trasparente il contesto distribuito. \\
 		Una soluzione al problema è stata proposta da Nelson e Birrell (1984) introducendo una modalità completamente differente nella gestione della comunicazione nel contesto di un sistema distribuito.
-		
+		In breve la proposta è quella di chiamare procedure che sono localizzate su macchine remote:
+		\begin{enumerate}
+			\item quando A chiama B il processo chiamante in A è sospeso;
+			\item l'esecuzione della procedura chiamata ha luogo in B;
+			\item A invia i parametri della chiamata a B che a sua volta risponderà con il risultato della chiamata;
+			\item \textbf{Nessun passaggio di messaggi è visibile dal punto di vista del programmatore.}
+		\end{enumerate}
+		La soluzione ha le seguenti problematiche:
+		\begin{itemize}
+			\item le procedure chiamante e chiamato si trovano su macchine diverse e non condividono lo stesso address space;
+			\item la rappresentazione dei parametri e del risultato di ritorno può differire sulle macchine interessate;
+			\item Le due macchine potrebbero crashare.
+		\end{itemize}
 		
 		
 		
