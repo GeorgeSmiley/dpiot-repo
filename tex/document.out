@@ -3,3 +3,10 @@
 \BOOKMARK [3][-]{subsubsection.1.1.1}{Middleware}{subsection.1.1}% 3
 \BOOKMARK [3][-]{subsubsection.1.1.2}{Coordinazione diretta}{subsection.1.1}% 4
 \BOOKMARK [2][-]{subsection.1.2}{Remote Procedure Call}{section.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Passaggio di parametri}{subsection.1.2}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Implementare RPC}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.3}{RPC Asincrono}{subsection.1.2}% 8
+\BOOKMARK [3][-]{subsubsection.1.2.4}{Binding}{subsection.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.3}{Message Oriented Middleware}{section.1}% 10
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Queue Manager}{subsection.1.3}% 11
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Eterogeneità: Message Brokers}{subsection.1.3}% 12
