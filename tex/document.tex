@@ -207,6 +207,27 @@
 		\subsubsection{Eterogeneità: Message Brokers}
 			I sistemi distribuiti possono essere eterogenei rispetto ai linguaggi utilizzati per realizzare le singole entità partecipanti. In questi casi è difficile definire un protocollo condiviso poichè è assente alla base un'accordo sul formato dei dati messaggi scambiati.\\
 			Un \textbf{Message Broker} si comporta come un getway: si occupa di convertire i messaggi ricevuti in un formato consono a quello del ricevente. Nella pratica un message broker usa un repository di regole e programmi che permettono la conversione di un messaggio T1 in uno T2.
+			Esempi di message brokers: 
+			
+	\subsection{Java RMI}
+		Java RMI (\textbf{Remote Method Invocation}) è un framework che permette di implementare il modello RPC nel constesto di un sistema distribuito.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.40]{img/rmi.png}
+			\caption{Architettura di RMI}
+		\end{figure}
+		Il modello presenta 4 entità principali:
+		\begin{itemize}
+			\item \textbf{Interfaccia}: utilizzata per definire la risorsa remota;
+			\item \textbf{Server}: implementa la risorsa remota (che sarà invocato dal client);
+			\item \textbf{Client}: richiede al server la risorsa remota.
+			\item \textbf{Registro}: si occupa di gestire l'accesso alla risorsa remota.
+		\end{itemize}
+		Il \textbf{Registro}: è servizio di \textbf{naming} che mappa i nomi simbolici degli oggetti remoti al loro stub. Il Server può registrare un oggetto remoto nel registro scrivendone il nome e l'indirizzo al quale è reperibile. Il client cerca l'oggetto remoto all'interno del registro.\\
+		 
+		
+		
+		  
 			
 			
 			 

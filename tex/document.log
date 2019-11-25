@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.6)  25 NOV 2019 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.6)  25 NOV 2019 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,7 +314,7 @@ Missing character: There is no   in font cmr12!
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
-<img/middle.png, id=92, 753.5653pt x 380.17032pt>
+<img/middle.png, id=97, 753.5653pt x 380.17032pt>
 File: img/middle.png Graphic file (type png)
 <use img/middle.png>
 Package pdftex.def Info: img/middle.png  used on input line 46.
@@ -361,7 +361,7 @@ Missing character: There is no Ã in font cmbx12!
 Missing character: There is no ¨ in font cmbx12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ² in font cmr12!
-<img/proc.png, id=109, 838.63312pt x 234.8775pt>
+<img/proc.png, id=116, 838.63312pt x 234.8775pt>
 File: img/proc.png Graphic file (type png)
 <use img/proc.png>
 Package pdftex.def Info: img/proc.png  used on input line 91.
@@ -374,7 +374,7 @@ Overfull \hbox (29.31552pt too wide) in paragraph at lines 91--92
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/how.png, id=110, 796.47563pt x 388.45125pt>
+<img/how.png, id=117, 796.47563pt x 388.45125pt>
 File: img/how.png Graphic file (type png)
 <use img/how.png>
 Package pdftex.def Info: img/how.png  used on input line 96.
@@ -396,7 +396,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ² in font cmr12!
-<img/xml.png, id=122, 633.11531pt x 338.76563pt>
+<img/xml.png, id=129, 633.11531pt x 338.76563pt>
 File: img/xml.png Graphic file (type png)
 <use img/xml.png>
 Package pdftex.def Info: img/xml.png  used on input line 117.
@@ -408,7 +408,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
-<img/rpccode.png, id=133, 1053.9375pt x 435.87843pt>
+<img/rpccode.png, id=140, 1053.9375pt x 435.87843pt>
 File: img/rpccode.png Graphic file (type png)
 <use img/rpccode.png>
 Package pdftex.def Info: img/rpccode.png  used on input line 125.
@@ -420,7 +420,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [6 <./img/xml.png (PNG copy)>]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
-<img/remotelocal.png, id=138, 1149.5447pt x 513.41812pt>
+<img/remotelocal.png, id=145, 1149.5447pt x 513.41812pt>
 File: img/remotelocal.png Graphic file (type png)
 <use img/remotelocal.png>
 Package pdftex.def Info: img/remotelocal.png  used on input line 138.
@@ -438,7 +438,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
-<img/async.png, id=144, 644.4075pt x 193.47281pt>
+<img/async.png, id=152, 644.4075pt x 193.47281pt>
 File: img/async.png Graphic file (type png)
 <use img/async.png>
 Package pdftex.def Info: img/async.png  used on input line 152.
@@ -447,7 +447,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no   in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ² in font cmr12!
-<img/callback.png, id=145, 491.58656pt x 241.65282pt>
+<img/callback.png, id=153, 491.58656pt x 241.65282pt>
 File: img/callback.png Graphic file (type png)
 <use img/callback.png>
 Package pdftex.def Info: img/callback.png  used on input line 158.
@@ -464,7 +464,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¹ in font cmr12!
-<img/bind.png, id=146, 605.26125pt x 250.68657pt>
+<img/bind.png, id=154, 605.26125pt x 250.68657pt>
 File: img/bind.png Graphic file (type png)
 <use img/bind.png>
 Package pdftex.def Info: img/bind.png  used on input line 167.
@@ -478,7 +478,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ² in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¹ in font cmr12!
-<img/queque.png, id=152, 628.59843pt x 511.15968pt>
+<img/queque.png, id=159, 628.59843pt x 511.15968pt>
 File: img/queque.png Graphic file (type png)
 <use img/queque.png>
 Package pdftex.def Info: img/queque.png  used on input line 175.
@@ -505,14 +505,14 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ² in font cmr12!
 Missing character: There is no Ã in font cmti12!
 Missing character: There is no   in font cmti12!
-<img/mana.png, id=161, 856.70062pt x 390.70969pt>
+<img/mana.png, id=168, 856.70062pt x 390.70969pt>
 File: img/mana.png Graphic file (type png)
 <use img/mana.png>
 Package pdftex.def Info: img/mana.png  used on input line 196.
 (pdftex.def)             Requested size: 257.01216pt x 117.2138pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ² in font cmr12!
-<img/overlay.png, id=162, 827.34094pt x 435.12563pt>
+<img/overlay.png, id=169, 827.34094pt x 435.12563pt>
 File: img/overlay.png Graphic file (type png)
 <use img/overlay.png>
 Package pdftex.def Info: img/overlay.png  used on input line 202.
@@ -536,21 +536,39 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
- [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+<img/rmi.png, id=175, 449.42906pt x 378.66469pt>
+File: img/rmi.png Graphic file (type png)
+<use img/rmi.png>
+Package pdftex.def Info: img/rmi.png  used on input line 216.
+(pdftex.def)             Requested size: 179.76843pt x 151.46318pt.
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no   in font cmr12!
+ [12 <./img/rmi.png (PNG copy)>]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no   in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ² in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 289.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 289.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 289.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 289.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 9907F6312CFEFEAA617ADC923FFA8412;865.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
+(rerunfilecheck)             Checksum: 0C13DFFFFCAD2E2B558CED4F49210089;923.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 289.
  ) 
 Here is how much of TeX's memory you used:
- 6937 strings out of 492982
- 102514 string characters out of 6134897
+ 6946 strings out of 492982
+ 102630 string characters out of 6134897
  219167 words of memory out of 5000000
- 10382 multiletter control sequences out of 15000+600000
+ 10387 multiletter control sequences out of 15000+600000
  9155 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,8n,40p,802b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -559,10 +577,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on document.pdf (12 pages, 1574892 bytes).
+Output written on document.pdf (13 pages, 1669276 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,3 +11,4 @@
 \contentsline {subsection}{\numberline {1.3}Message Oriented Middleware}{9}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Queue Manager}{11}{subsubsection.1.3.1}
 \contentsline {subsubsection}{\numberline {1.3.2}Eterogeneità: Message Brokers}{12}{subsubsection.1.3.2}
+\contentsline {subsection}{\numberline {1.4}Java RMI}{12}{subsection.1.4}
