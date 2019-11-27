@@ -219,11 +219,28 @@
 		Il modello presenta 4 entità principali:
 		\begin{itemize}
 			\item \textbf{Interfaccia}: utilizzata per definire la risorsa remota;
-			\item \textbf{Server}: implementa la risorsa remota (che sarà invocato dal client);
+			\item \textbf{Server}: implementa la risorsa remota (che sarà richiesta dal client);
 			\item \textbf{Client}: richiede al server la risorsa remota.
 			\item \textbf{Registro}: si occupa di gestire l'accesso alla risorsa remota.
 		\end{itemize}
-		Il \textbf{Registro}: è servizio di \textbf{naming} che mappa i nomi simbolici degli oggetti remoti al loro stub. Il Server può registrare un oggetto remoto nel registro scrivendone il nome e l'indirizzo al quale è reperibile. Il client cerca l'oggetto remoto all'interno del registro.\\
+		Il \textbf{Registro}: è un servizio di \textbf{naming} che mappa i nomi simbolici degli oggetti remoti al loro stub. Il Server può registrare un oggetto remoto nel registro scrivendone il nome e l'indirizzo al quale è reperibile. Il client cerca l'oggetto remoto all'interno del registro.\\
+		L'\textbf{interfaccia} specifica un contratto, ovvero le firme dei metodi che si possono invocare sull'oggetto remoto e che dunque ne regolano le modalità di utilizzo. \textbf{Per ogni oggetto} che vogliamo rendere accessibile attraverso la rete dobbiamo definire un'interfaccia che estenda l'interfaccia remota \textit{\textbf{java.rmi.remote}}. Le interfacce così definite dal server devono essere note anche al client in modo tale che egli possa operare sugli oggetti ricevuti dal server senza incorrere in errori di tipo. L'interfaccia remota serve solo ad indicare la possibilità di reperire gli oggetti che estendono tale interfaccia in remoto.\\
+		Vediamo quali sono i passi per implementare un \textbf{RMI server}:
+		\begin{enumerate}
+			\item Implementare la classe remota definendo costruttore e metodi remoti (estendiamo la classe \textit{\textbf{java.rmi.server.UnicastRemoteObject }} e ne chiamiamo il costruttore per esportare l'oggetto);
+			\item Creare un'istanza dell'oggetto remoto;
+			\item Registrare tale oggetto remoto all'interno del registro. Per fare questo dobbiamo scegliere un identificativo unico (una stringa) per l'oggetto, che deve essere noto anche al client. Una volta ottenuto un riferimento al registry creiamo un binding tra quel nome e l'istanza dell'oggetto relativa. La classe \textit{\textbf{LocateRegistry}} permette di ottenere il riferimento al registro remoto o di crearne uno in ascolto sulla porta desiderata sullo stesso host del server (\textbf{\textit{createRegistry(int port), getRegistry(String host, int port )}}). 
+		\end{enumerate}
+		Per quanto riguarda il client i passi per l'implementazione sono i seguenti:
+		\begin{enumerate}
+			\item Localizzare il registro (stessi metodi della classe \textbf{LocateRegistry} indicati per il server);
+			\item Utilizzare un nome simbolico per cercare l'oggetto remoto all'interno del registro;
+			\item utilizzare l'oggetto remoto chiamandone i metodi. 
+		\end{enumerate}
+		Possiamo utilizzare RMI per implementare una comunicazione \textbf{sincrona} (il client aspetta fino al termine dell'invocazione remota). Possiamo ottenere una comunicazione \textbf{asincrona} utilizzando le \textbf{callback} il client invoca un oggetto remoto e passa la callback al server, utilizzata da quest'ultimo per ottenere  
+		
+	
+		
 		 
 		
 		
