@@ -1,14 +1,20 @@
 \babel@toc {english}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Livello Middleware}}{2}{figure.1}
+\contentsline {figure}{\numberline {1}{\ignorespaces Livello Middleware}}{3}{figure.1}
 \contentsline {figure}{\numberline {2}{\ignorespaces Chiamata a procedura locale vs remota}}{5}{figure.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces Funzionamento RPC}}{5}{figure.3}
 \contentsline {figure}{\numberline {4}{\ignorespaces Xml }}{6}{figure.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces Marshaling in Java }}{7}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Oggetti remoti e locali }}{7}{figure.6}
+\contentsline {figure}{\numberline {6}{\ignorespaces Oggetti remoti e locali }}{8}{figure.6}
 \contentsline {figure}{\numberline {7}{\ignorespaces RPC tradizionale e asincrona }}{8}{figure.7}
 \contentsline {figure}{\numberline {8}{\ignorespaces Callback }}{9}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Binding }}{9}{figure.9}
+\contentsline {figure}{\numberline {9}{\ignorespaces Binding }}{10}{figure.9}
 \contentsline {figure}{\numberline {10}{\ignorespaces Code }}{10}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Queue Manager }}{11}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Overlay network }}{11}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Architettura di RMI}}{12}{figure.13}
+\contentsline {figure}{\numberline {11}{\ignorespaces Queue Manager }}{12}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Overlay network }}{12}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Architettura di RMI}}{13}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Definizione di un interfaccia con gRPC IDL}}{16}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Come rappresentare la topologia di rete}}{17}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Topologia}}{18}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Labels}}{18}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Stato x Evento}}{20}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Algoritmo Flooding}}{21}{figure.19}

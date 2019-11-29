@@ -36,40 +36,37 @@
 	\listoffigures
 	
 \section{Communication Mechanisms}
-	
-	\subsection{Basi}
-	
-		\subsubsection{Middleware}
-				
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=0.50]{img/middle.png}
-				\caption{Livello Middleware}
-			\end{figure}
-			Il \textbf{middleware} è un insieme di applicazioni e protocolli "\textbf{general purpose}" che risiedono all'interno del livello applicativo. è dunque un livello software che astrae dall'eterogeneità di rete, hardware, sistemi operativi e linguaggi di programmazione, con lo \textbf{scopo di fornire interfacce comuni che assicurino  modelli di comunicazione e di computazione uniformi}.  Questo livello, dunque, costituisce un insieme di protocolli condivisi dalle applicazioni più specifiche al livello soprastante.
-			In sintesi, un livello middleware offre servizi alle applicazioni quali:
-			\begin{itemize}
-				\item Comunicazione;
-				\item Meccanismi di sicurezza;
-				\item Transazioni
-				\item Error-recovery;
-				\item Gestione di risorse condivise.
-			\end{itemize}
-			\textbf{Questi servizi sono indipendenti rispetto alle specifiche applicazioni.} 
-			Alcuni esempi:
-			\begin{itemize}
-				\item Protocolli di autenticazione e autorizzazione (criptografia ssh)
-				\item Protocolli di commit. Sono utilizzati per realizzare l'atomicità nelle transazioni. Stabiliscono se in un insieme di processi tutti hanno svolto una particolare operazione o se non è stata svolta affatto.
-			\end{itemize}
-			Nello specifico vedremo come i \textbf{protocolli di comunicazione middleware supportino servizi di comunicazione ad alto livello} e permettano, per esempio, la chiamata a procedure o oggetti remoti in modo \textbf{trasparente.}
+	\subsection{Middleware}	
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.50]{img/middle.png}
+			\caption{Livello Middleware}
+		\end{figure}
+		Il \textbf{middleware} è un insieme di applicazioni e protocolli "\textbf{general purpose}" che risiedono all'interno del livello applicativo. è dunque un livello software che astrae dall'eterogeneità di rete, hardware, sistemi operativi e linguaggi di programmazione, con lo \textbf{scopo di fornire interfacce comuni che assicurino  modelli di comunicazione e di computazione uniformi}.  Questo livello, dunque, costituisce un insieme di protocolli condivisi dalle applicazioni più specifiche al livello soprastante.
+		In sintesi, un livello middleware offre servizi alle applicazioni quali:
+		\begin{itemize}
+			\item Comunicazione;
+			\item Meccanismi di sicurezza;
+			\item Transazioni
+			\item Error-recovery;
+			\item Gestione di risorse condivise.
+		\end{itemize}
+		\textbf{Questi servizi sono indipendenti rispetto alle specifiche applicazioni.} 
+		Alcuni esempi:
+		\begin{itemize}
+			\item Protocolli di autenticazione e autorizzazione (criptografia ssh)
+			\item Protocolli di commit. Sono utilizzati per realizzare l'atomicità nelle transazioni. Stabiliscono se in un insieme di processi tutti hanno svolto una particolare operazione o se non è stata svolta affatto.
+		\end{itemize}
+		Nello specifico vedremo come i \textbf{protocolli di comunicazione middleware supportino servizi di comunicazione ad alto livello} e permettano, per esempio, la chiamata a procedure o oggetti remoti in modo \textbf{trasparente.}
 			 
-		\subsubsection{Coordinazione diretta}	
-			Un tipi di comunicazione nella quale le componenti partecipanti sono:
-			\begin{itemize}
-				\item \textbf{Referentially coupled}: durante la comunicazione gli attori utilizzano riferimenti espliciti ai loro interlocutori.
-				\item \textbf{Temporally coupled}: entrambe le componenti devono essere in esecuzione (up and running).	
-			\end{itemize}
-			Il libro propone un'introduzione ai tipi di comunicazione (persist, transient, synchronous, asynchronous).
+	\subsection{Coordinazione diretta}	
+		Un tipi di comunicazione nella quale le componenti partecipanti sono:
+		\begin{itemize}
+			\item \textbf{Referentially coupled}: durante la comunicazione gli attori utilizzano riferimenti espliciti ai loro interlocutori.
+			\item \textbf{Temporally coupled}: entrambe le componenti devono essere in esecuzione (up and running).	
+		\end{itemize}
+		Il libro propone un'introduzione ai tipi di comunicazione (persist, transient, synchronous, asynchronous).
+		
 	\subsection{Remote Procedure Call}
 		Molti sistemi distribuiti sono basati sullo scambio di messaggi tra processi, tuttavia questo tipo di approccio non permette di nascondere la comunicazione tra le componenti in modo da rendere trasparente il contesto distribuito. \\
 		Una soluzione al problema è stata proposta da Nelson e Birrell (1984) introducendo una modalità completamente differente nella gestione della comunicazione nel contesto di un sistema distribuito.
@@ -237,7 +234,156 @@
 			\item Utilizzare un nome simbolico per cercare l'oggetto remoto all'interno del registro;
 			\item utilizzare l'oggetto remoto chiamandone i metodi. 
 		\end{enumerate}
-		Possiamo utilizzare RMI per implementare una comunicazione \textbf{sincrona} (il client aspetta fino al termine dell'invocazione remota). Possiamo ottenere una comunicazione \textbf{asincrona} utilizzando le \textbf{callback} il client invoca un oggetto remoto e passa la callback al server, utilizzata da quest'ultimo per ottenere  
+		Possiamo utilizzare RMI per implementare una comunicazione \textbf{sincrona} (il client aspetta fino al termine dell'invocazione remota). Possiamo ottenere una comunicazione \textbf{asincrona} utilizzando le \textbf{callback} il client invoca un oggetto remoto e passa la callback al server (un altro oggetto remoto).
+		
+	\subsection{gRPC}
+		gRPC è un framework open source per l'implementazione del modello RPC:
+		\begin{itemize}
+			\item Si basa su i meccanismi di streaming messi a disposizione da \textbf{ HTTP/2};
+			\item \textbf{Supporta molti linguaggi} grazie all'utilizzo di un \textbf{IDL} (Interface Definition Language).
+			\item Si appoggia a \textbf{Protocol Buffer} che è un meccanismo per la serializzazione di strutture dati basato su un particolare formato binario che rendono i payload leggeri e veloci da trasmettere. Mette a disposizione un linguaggio proprio utilizzabile per definire interfacce indipendenti dal linguaggio.
+		\end{itemize}
+		I servizi messi a disposizione sono 4:
+		\begin{itemize}
+			\item \textbf{Unary RPCs}: Implementa uno scambio di messaggi \textbf{sincrono}.
+			\item \textbf{Server streaming RPCs}: Un client invia richieste al server e riceve uno stream di messaggi (il client legge dallo stream fino a che non ci sono piu messaggi).
+			\item \textbf{Client streaming RPCs}: Il client scrive una sequenza di messaggi e li manda al server utilizzando uno stream.
+			\item \textbf{Bidirection streaming RPCs}: Entrambi i lati della comunicazione utilizzano uno stream in lettura/scrittura per inviare e ricevere messaggi.  
+		\end{itemize}
+		Il Workflow di gRPC è il seguente:
+		\begin{itemize}
+			\item \textbf{Definire un'interfaccia} utilizzando il Protocol Buffer Language ed il suo IDL (file di testo in formato \textbf{.proto});
+			\item \textbf{Compilare} l'interfaccia per ottenere gli stub per client e server e le classi necessarrie alla serializzazione (si utilizza il comando \textbf{protoc}).
+			\item \textbf{Integrare} gli stub con codice ad-hoc.
+		\end{itemize}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.30]{img/idl.png}
+			\caption{Definizione di un interfaccia con gRPC IDL}
+		\end{figure}
+	
+		FINIRE SU SLIDE 
+		
+\section{Basic distributed algorithms}
+	\subsection{Contesto}
+		Il \textbf{contesto} nel quale operiamo è chiamato \textbf{ambiente distribuito}. Consiste in una collezione finita $\epsilon$ di \textbf{entità} che comunicano attraverso \textbf{messaggi} con lo scopo di raggiungere un \textbf{obiettivo comune}. Vediamo quali sono le componenti principali del modello:
+		\begin{itemize}
+			\item \textbf{Entità}: è l'unità computazionale di un ambiente distribuito, può essere vista come un processo, un agente, uno switch ecc. Ogni entità è equipaggiata con una memoria privata e non condivisa. La memoria è composta da un insieme di registri, tra i quali spiccano lo \textbf{status register}, che può assumere i valori di \textit{idle, Processing, Waiting}, e l'\textbf{input value register}. Inoltre è possibile settare un \textbf{alarm clock} locale che può essere resettato all'occorrenza.
+			\item \textbf{Eventi esterni}: Il comportamento di un'entità è reattivo ed innescato da stimoli esterni. Questi possono essere:
+			\begin{itemize}
+				\item L'arrivo di un messaggio;
+				\item Lo scadere dell'alarm clock;
+				\item Impulsi spontanei.
+			\end{itemize}
+			L'ultimo è l'unico stimolo originato da forze che sono esterne al sistema (come esempio si riporta la richiesta ad un bancomat da parte dell'utente nel sistema ATM server- ATM client)
+			\item \textbf{Azioni}: un'entità può svolgere le seguenti \textbf{operazioni}:
+		\begin{itemize}
+			\item Operazioni sulla memoria locale;
+			\item Trasmissione dei messaggi;
+			\item (re)set dell'alarm clock;
+			\item Cambiare il valore del registro di stato.
+		\end{itemize}
+			Le azioni sono \textbf{atomiche} (non possono essere interrotte) e \textbf{finite} (devono terminare in tempo finito). L'azione speciale \textbf{nil} permette ad un'entità di non reagire ad uno specifico evento.
+			\item \textbf{Comportamenti delle entità}: l'insieme $B(x)$ è una funzione $Statox Evento \rightarrow Azioni$ ovvero una funzione che ad una coppia stato-evento associa un comportamento (può definire un insieme di comportamenti \textbf{deterministico} o \textbf{non deterministico}). Un sistema è detto \textbf{simmetrico} se tutte le entità hanno lo stesso comportamento ($B(x) = B(y) \forall x,y \in E$). Tutti i sistemi possono essere resi simmetrici.
+			\textbf{Comunicazioni:} guarda figure.
+		\end{itemize}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.30]{img/comun.png}
+			\caption{Come rappresentare la topologia di rete}
+		\end{figure}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.30]{img/graph.png}
+			\caption{Topologia}
+		\end{figure}
+	
+		\subsubsection{Assiomi}
+			\begin{itemize}
+				\item \textbf{Delay trasmissione messaggi}: in assenza di \textbf{fallimenti} un messaggio inviato da x ad un suon vicino y arriva in un tempo finito.
+				\item \textbf{Orientamento Locale}: ogni entità può distinguere i suoi \textbf{out-neighbors} ( si utilizzano delle etichette sugli archi). Nella pratica un'entità sa da quale porta il messaggio gli è stato recapitato.
+			\end{itemize}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.40]{img/lab.png}
+				\caption{Labels}
+			\end{figure}
+		
+		\subsubsection{Restrizioni}
+			Si possono definire ulteriori proprietà o capacità in relazione ai compiti e agli obiettivi che il sistema distribuito si prepone di raggiungere. Tuttavia queste proprietà aggiuntive  limitano l'applicabilità reale del protocollo e dunque nella pratica rappresentano delle \textbf{restrizioni}. Vediamone alcune:
+			\begin{itemize}
+				\item \textbf{Ordine dei messaggi:} in assena di fallimenti, messaggi trasmessi nello stesso link arrivano nell'ordine d'invio.
+				\item \textbf{Link bidirezionali}: $\forall x$ $N_{i}(x)=N_{o}(x)$ e $\forall y$ $\lambda_{x}(x,y) = \lambda_{x}(y,x	)$ 
+				\item \textbf{Fault detection}:
+				\begin{itemize}
+					\item \textbf{Edge Failure Detection}: un'entità può individuare il fallimento di uno dei suoi link;
+					\item \textbf{Entity Failure Detection}: un'entità può rilevare il fallimento di uno dei suoi vicini 	
+				\end{itemize} 
+				\item \textbf{Reliability restrinction}: 
+				\begin{itemize}
+					\item \textbf{Guaranteed delivery}: ogni messaggio inviato viene recapitato al mittente non corrotto;
+					\item \textbf{Partial reliability}: garantisce l'assenza di fallimenti in futuro;
+					\item \textbf{Total reliabilit}: non ci sono stati fallimenti e non ce ne saranno.
+				\end{itemize} 
+				\item \textbf{Strongly connected}: il grafo g che rappresenta la topologia è fortemente connesso.
+				\item \textbf{Knowledge restrinction}
+				\begin{itemize}
+					\item conoscenza del numero di nodi;
+					\item conoscenza del numero di link;
+					\item conoscenza del diametro.
+				\end{itemize}
+			\end{itemize}
+		
+	\subsubsection{Tempo ed Eventi}
+		Un evento esterno genera un'azione che dipende dallo stato dell'entità in questione. Un'azione può a sua volta generare un evento (per esempio l'operazione send genera un evento receiving). Un'ulteriore considerazione riguarda la possibilità che eventi generati in questo modo possano non occorrere nel caso in cui vi sia un fallimento del link di comunicazione. Ovviamente questi eventi se occorrono occorrono dopo del tempo (alla ricezione del messaggio per esempio). Eventi come \textbf{receiving} hanno un \textbf{delay non predicibile}. Un'esecuzione è descritta completamente dalla sequenza di eventi che è occorsa. Delay diversi porteranno ad esecuzioni differenti e dunque a risultati possibilmente diversi. Per convenzione tutti gli eventi spontanei sono generati al tempo $t=0$ prima che l'esecuzione abbia inizio.\\
+		Definito $\alpha(x,t)$ lo stato del nodo x al tempo t, è importante evidenziare che:
+		\begin{itemize}
+			\item se un evento avviene in due esecuzioni diverse e gli stati $\alpha 1$ e $\alpha 2$ sono uguali, allora \textbf{il nuovo stato interno sarà lo stesso in entrambe le esecuzioni}.
+			\item se un evento avviene al tempo t nei nodi x e y ed i loro stati $\alpha(x)$ e $\alpha(y)$ sono uguali, allora i nuovi stati di x e y saranno lo stesso stato.
+		\end{itemize}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.25]{img/event.png}
+			\caption{Stato x Evento}
+		\end{figure}
+	
+	\subsubsection{Livelli di Conoscenza}
+		\begin{itemize}
+			\item \textbf{Local knowledge}: $p \in LK_t[x]$ dove p è il contenuto della memoria locale di un'entità e tutte le informazioni derivabili da essa.
+			\item \textbf{Implicit knowledge}: $p \in IK_t[W]\_ iff \exists x \in W$ $(p \in LK_t[x])$
+			\item \textbf{Explicit knowledge}: $p \in EK_t[W]\_ iff \forall x \in W$ $(p \in LK_t[x])$
+		\end{itemize}
+	
+	\subsection{Broadcast}
+		Considerato un sistema distribuito nel quale solo il nodo x sia a conoscenza di una qualche informazione importante, il \textbf{problema del broadcast} consiste nel propagare questa informazione a tutti gli altri nodi. Una soluzione del problema deve essere valida a prescindere dal nodo \textbf{iniziatore}.
+		
+		\subsubsection{Flooding}
+			Una soluzione al problema del broadcast è data dall'algoritmo \textbf{flooding}. L'idea è molto semplice: se un nodo è a conoscenza di qualcosa invia l'informazione ai suoi vicini. L'algoritmo è riportato in figura nella variante per la quale il mittente viene escluso dalla lista dei nodi ai quali inoltrare l'informazione ricevuta.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.4]{img/flood.png}
+				\caption{Algoritmo Flooding}
+			\end{figure}
+		L'algoritmo gode della proprità di \textbf{Termination}: l'algoritmo termina in tempo finito (local termination quando lo stato è \textit{done}). Garantita dal fatto che il grafo è connesso e che vale la proprietà di total reliability. Il caso peggiore si presenta quando il \textbf{grafo è completo}.\\
+		
+		
+		
+		
+		
+			
+		
+
+
+	
+
+	
+	
+	
+	
+		
+		
 		
 	
 		
