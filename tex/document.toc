@@ -20,3 +20,7 @@
 \contentsline {subsubsection}{\numberline {2.1.4}Livelli di Conoscenza}{20}{subsubsection.2.1.4}
 \contentsline {subsection}{\numberline {2.2}Broadcast}{20}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Flooding}{20}{subsubsection.2.2.1}
+\contentsline {subsection}{\numberline {2.3}Flooding in reti con caratteristiche particolari}{22}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Broadcast in un Hypercube}{22}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Broadcast in un grafo completo}{24}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Lower bound}{24}{subsubsection.2.3.3}

@@ -355,11 +355,13 @@
 			\item \textbf{Implicit knowledge}: $p \in IK_t[W]\_ iff \exists x \in W$ $(p \in LK_t[x])$
 			\item \textbf{Explicit knowledge}: $p \in EK_t[W]\_ iff \forall x \in W$ $(p \in LK_t[x])$
 		\end{itemize}
+		I \textbf{tipi di conoscenza} includono quelle \textbf{topologiche}, \textbf{metriche} (numero di nodi, diametro, eccentricità), \textbf{senso della direzione} (informazioni sui link, informazioni sulle label). Importante sottolineare come \textbf{al crescere delle conoscenze l'algoritmo diventi meno portatile}. Gli algoritmi generici non utilizzano nessuna conoscenza.     
 	
 	\subsection{Broadcast}
 		Considerato un sistema distribuito nel quale solo il nodo x sia a conoscenza di una qualche informazione importante, il \textbf{problema del broadcast} consiste nel propagare questa informazione a tutti gli altri nodi. Una soluzione del problema deve essere valida a prescindere dal nodo \textbf{iniziatore}.
 		
 		\subsubsection{Flooding}
+			\textbf{Assunzioni}: (\textbf{{BL, CN, TR}}) Bidirectional link, Connectivity (ogni entità è capace di raggiungere l'altra), Total reliability. + (\textbf{UI+}).\\
 			Una soluzione al problema del broadcast è data dall'algoritmo \textbf{flooding}. L'idea è molto semplice: se un nodo è a conoscenza di qualcosa invia l'informazione ai suoi vicini. L'algoritmo è riportato in figura nella variante per la quale il mittente viene escluso dalla lista dei nodi ai quali inoltrare l'informazione ricevuta.
 			\begin{figure}[h!]
 				\centering
@@ -367,8 +369,52 @@
 				\caption{Algoritmo Flooding}
 			\end{figure}
 		L'algoritmo gode della proprità di \textbf{Termination}: l'algoritmo termina in tempo finito (local termination quando lo stato è \textit{done}). Garantita dal fatto che il grafo è connesso e che vale la proprietà di total reliability. Il caso peggiore si presenta quando il \textbf{grafo è completo}.\\
+		Per quanto riguarda la \textbf{complessità dei messaggi}: vengono scambiati 2 messaggi per ogni link $$\sum_{x}^{}N(x)=2m \rightarrow 2m = O(m) $$ nello specifico:
+		$$|N(s)|+\sum_{x\neq s}^{}(N(x)-1)=\sum_{x}^{}(N(x)-\sum_{x}^{}1) = 2m-(n-1)$$
+		Per quanto riguarda la complessità in tempo abbiamo:
+		$$r(s)=Max_x(d(x,s))=eccentricity \leq Diameter(G) \leq n-1$$
+		con:
+		$$Diameter(G)=Max_x(r(x))  $$
 		
 		
+	\subsection{Flooding in reti con caratteristiche particolari}
+		Un algoritmo che implementi il broadcast in un sistema distribuito varia la sua efficienza in base alla topologia di rete. Vediamo alcuni casi:
+		\subsubsection{Broadcast in un Hypercube}
+			Per $k=1$ un hypercube è un grafo che presenta due nodi collegati da un link.
+			Un Hypercube $H_k$ di dimensione $k>1$ è ottenuto prendendo due hypercube di dimensione $k-1-H^{1}_k-1$ e collegando i nodi con nome uguale con un link etichettato. I nuovi nomi dei nodi sono ottenuti aggiungendo il prefisso 1 o il prefisso 0 ai nomi precedenti. Le label dei link sono ottenute contando i bit di differenza tra il nome dei due nodi collegati. Le etichette sono simmetriche rispetto ai nodi connessi dal link\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.35]{img/hyper.png}
+				\caption{Hypercube}
+			\end{figure}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.20]{img/hyper2.png}
+				\caption{Costruzione hypercube}
+			\end{figure}
+			\textbf{\textit{Ricordiamo che i nomi dei nodi sono utilizzati solo a scopo descrittivo e non sono conosciuti dalle entità. Al contrario in nomi delle etichette sono noti alle entità per l'assioma di local orientation}.}\\
+			Vediamo la \textbf{complessità} del flooding per questa particolare topologia. Un hypercube di dimensione $k$ ha $n=2^{k}$ \textbf{nodi}. Pertanto il \textbf{numero di link è}:
+			$$m=nk/2= O(nlog(n)) $$ il costo del flooding è pertanto:
+			$$2m-(n-1) = nlog(n)-(n-1)=(nlog(n)/2) +1=O(nlog(n))$$
+			Possiamo utilizzare le proprietà topologiche dell'hypercube per ottenere un broadcast ancora più efficiente:
+			\begin{enumerate}
+				\item L'iniziatore invia il messaggio a tutti i suoi vicini;
+				\item Un nodo che riceve un mesaggio dal link $l$, lo invia solo ai link con etichetta $l^{1}<l$ 
+			\end{enumerate}
+			Con questa modifica il flooding costerà soltanto (n-1) (messaggi).\\
+			La \textbf{correttezza} dell'algoritmo è data dal seguente lemma: \textit{per ogni paio di nodi x,y esiste un path unico di etichette decrescenti}.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.20]{img/hyper3.png}
+				\caption{Lemma}
+			\end{figure}
+			Il risultato è che il messaggio crea uno \textbf{spanning tree} e ogni nodo è raggiunto da tale messaggio. La complessità risulta essere quella ottimale (n-1) perchè le entità ricevono l'informazione solo una volta. La complessità ideale in tempo è k poichè l'eccentricità di ogni nodo è k.
+		\subsubsection{Broadcast in un grafo completo}
+			Notiamo che nel caso di un grafo completo il flooding ha complessità 
+			$$2m-(n-1)=O(n^{2}) $$ con complessità per i messaggi di:
+			$$(n-1) $$
+		\subsubsection{Lower bound}
+	
 		
 		
 		

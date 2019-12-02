@@ -2,10 +2,10 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Livello Middleware}}{3}{figure.1}
 \contentsline {figure}{\numberline {2}{\ignorespaces Chiamata a procedura locale vs remota}}{5}{figure.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces Funzionamento RPC}}{5}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Xml }}{6}{figure.4}
+\contentsline {figure}{\numberline {4}{\ignorespaces Xml }}{7}{figure.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces Marshaling in Java }}{7}{figure.5}
 \contentsline {figure}{\numberline {6}{\ignorespaces Oggetti remoti e locali }}{8}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces RPC tradizionale e asincrona }}{8}{figure.7}
+\contentsline {figure}{\numberline {7}{\ignorespaces RPC tradizionale e asincrona }}{9}{figure.7}
 \contentsline {figure}{\numberline {8}{\ignorespaces Callback }}{9}{figure.8}
 \contentsline {figure}{\numberline {9}{\ignorespaces Binding }}{10}{figure.9}
 \contentsline {figure}{\numberline {10}{\ignorespaces Code }}{10}{figure.10}
@@ -18,3 +18,6 @@
 \contentsline {figure}{\numberline {17}{\ignorespaces Labels}}{18}{figure.17}
 \contentsline {figure}{\numberline {18}{\ignorespaces Stato x Evento}}{20}{figure.18}
 \contentsline {figure}{\numberline {19}{\ignorespaces Algoritmo Flooding}}{21}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Hypercube}}{22}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Costruzione hypercube}}{23}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Lemma}}{23}{figure.22}

@@ -19,3 +19,7 @@
 \BOOKMARK [3][-]{subsubsection.2.1.4}{Livelli di Conoscenza}{subsection.2.1}% 19
 \BOOKMARK [2][-]{subsection.2.2}{Broadcast}{section.2}% 20
 \BOOKMARK [3][-]{subsubsection.2.2.1}{Flooding}{subsection.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.3}{Flooding in reti con caratteristiche particolari}{section.2}% 22
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Broadcast in un Hypercube}{subsection.2.3}% 23
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Broadcast in un grafo completo}{subsection.2.3}% 24
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Lower bound}{subsection.2.3}% 25
