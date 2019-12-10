@@ -24,3 +24,11 @@
 \BOOKMARK [3][-]{subsubsection.2.3.2}{Broadcast in un grafo completo}{subsection.2.3}% 24
 \BOOKMARK [3][-]{subsubsection.2.3.3}{Lower bound}{subsection.2.3}% 25
 \BOOKMARK [2][-]{subsection.2.4}{Spanning tree construction}{section.2}% 26
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Protocollo Shout}{subsection.2.4}% 27
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Correttezza}{subsection.2.4}% 28
+\BOOKMARK [3][-]{subsubsection.2.4.3}{Costo computazionale}{subsection.2.4}% 29
+\BOOKMARK [3][-]{subsubsection.2.4.4}{Possibili migliorie}{subsection.2.4}% 30
+\BOOKMARK [3][-]{subsubsection.2.4.5}{Iniziatore mutliplo}{subsection.2.4}% 31
+\BOOKMARK [3][-]{subsubsection.2.4.6}{SPT: Depth First Search}{subsection.2.4}% 32
+\BOOKMARK [3][-]{subsubsection.2.4.7}{DF: migliorie}{subsection.2.4}% 33
+\BOOKMARK [2][-]{subsection.2.5}{Computazione negli alberi}{section.2}% 34

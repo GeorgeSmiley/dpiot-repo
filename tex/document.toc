@@ -2,11 +2,11 @@
 \contentsline {section}{\numberline {1}Communication Mechanisms}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Middleware}{3}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Coordinazione diretta}{4}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Remote Procedure Call}{4}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}Passaggio di parametri}{6}{subsubsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3}Remote Procedure Call}{5}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Passaggio di parametri}{7}{subsubsection.1.3.1}
 \contentsline {subsubsection}{\numberline {1.3.2}Implementare RPC}{8}{subsubsection.1.3.2}
 \contentsline {subsubsection}{\numberline {1.3.3}RPC Asincrono}{9}{subsubsection.1.3.3}
-\contentsline {subsubsection}{\numberline {1.3.4}Binding}{9}{subsubsection.1.3.4}
+\contentsline {subsubsection}{\numberline {1.3.4}Binding}{10}{subsubsection.1.3.4}
 \contentsline {subsection}{\numberline {1.4}Message Oriented Middleware}{10}{subsection.1.4}
 \contentsline {subsubsection}{\numberline {1.4.1}Queue Manager}{12}{subsubsection.1.4.1}
 \contentsline {subsubsection}{\numberline {1.4.2}Eterogeneità: Message Brokers}{13}{subsubsection.1.4.2}
@@ -25,3 +25,11 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Broadcast in un grafo completo}{24}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Lower bound}{24}{subsubsection.2.3.3}
 \contentsline {subsection}{\numberline {2.4}Spanning tree construction}{24}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Protocollo Shout}{24}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Correttezza}{26}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Costo computazionale}{26}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Possibili migliorie}{27}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}Iniziatore mutliplo}{30}{subsubsection.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}SPT: Depth First Search}{31}{subsubsection.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}DF: migliorie}{32}{subsubsection.2.4.7}
+\contentsline {subsection}{\numberline {2.5}Computazione negli alberi}{33}{subsection.2.5}
