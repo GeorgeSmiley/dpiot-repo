@@ -1,35 +1,40 @@
 \babel@toc {english}{}
-\contentsline {section}{\numberline {1}Communication Mechanisms}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Middleware}{3}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Coordinazione diretta}{4}{subsection.1.2}
+\contentsline {section}{\numberline {1}Communication Mechanisms}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Middleware}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Coordinazione diretta}{5}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Remote Procedure Call}{5}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Passaggio di parametri}{7}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}Implementare RPC}{8}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}RPC Asincrono}{9}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.2}Implementare RPC}{9}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}RPC Asincrono}{10}{subsubsection.1.3.3}
 \contentsline {subsubsection}{\numberline {1.3.4}Binding}{10}{subsubsection.1.3.4}
-\contentsline {subsection}{\numberline {1.4}Message Oriented Middleware}{10}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {1.4.1}Queue Manager}{12}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}Eterogeneità: Message Brokers}{13}{subsubsection.1.4.2}
-\contentsline {subsection}{\numberline {1.5}Java RMI}{13}{subsection.1.5}
-\contentsline {subsection}{\numberline {1.6}gRPC}{15}{subsection.1.6}
-\contentsline {section}{\numberline {2}Basic distributed algorithms}{16}{section.2}
-\contentsline {subsection}{\numberline {2.1}Contesto}{16}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Assiomi}{18}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Restrizioni}{18}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Tempo ed Eventi}{19}{subsubsection.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}Livelli di Conoscenza}{20}{subsubsection.2.1.4}
-\contentsline {subsection}{\numberline {2.2}Broadcast}{20}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Flooding}{20}{subsubsection.2.2.1}
-\contentsline {subsection}{\numberline {2.3}Flooding in reti con caratteristiche particolari}{22}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Broadcast in un Hypercube}{22}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Broadcast in un grafo completo}{24}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Lower bound}{24}{subsubsection.2.3.3}
-\contentsline {subsection}{\numberline {2.4}Spanning tree construction}{24}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Protocollo Shout}{24}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Correttezza}{26}{subsubsection.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Costo computazionale}{26}{subsubsection.2.4.3}
-\contentsline {subsubsection}{\numberline {2.4.4}Possibili migliorie}{27}{subsubsection.2.4.4}
-\contentsline {subsubsection}{\numberline {2.4.5}Iniziatore mutliplo}{30}{subsubsection.2.4.5}
-\contentsline {subsubsection}{\numberline {2.4.6}SPT: Depth First Search}{31}{subsubsection.2.4.6}
-\contentsline {subsubsection}{\numberline {2.4.7}DF: migliorie}{32}{subsubsection.2.4.7}
-\contentsline {subsection}{\numberline {2.5}Computazione negli alberi}{33}{subsection.2.5}
+\contentsline {subsection}{\numberline {1.4}Message Oriented Middleware}{11}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Queue Manager}{13}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Eterogeneità: Message Brokers}{14}{subsubsection.1.4.2}
+\contentsline {subsection}{\numberline {1.5}Java RMI}{14}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}gRPC}{16}{subsection.1.6}
+\contentsline {section}{\numberline {2}Basic distributed algorithms}{17}{section.2}
+\contentsline {subsection}{\numberline {2.1}Contesto}{17}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Assiomi}{19}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Restrizioni}{19}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Tempo ed Eventi}{20}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Livelli di Conoscenza}{21}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Broadcast}{21}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Flooding}{21}{subsubsection.2.2.1}
+\contentsline {subsection}{\numberline {2.3}Flooding in reti con caratteristiche particolari}{23}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Broadcast in un Hypercube}{23}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Broadcast in un grafo completo}{25}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Lower bound}{25}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Spanning tree construction}{25}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Protocollo Shout}{25}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Correttezza}{27}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Costo computazionale}{27}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Possibili migliorie}{28}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}Iniziatore mutliplo}{31}{subsubsection.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}SPT: Depth First Search}{32}{subsubsection.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}DF: migliorie}{33}{subsubsection.2.4.7}
+\contentsline {section}{\numberline {3}Computazione negli alberi}{34}{section.3}
+\contentsline {subsection}{\numberline {3.1}Saturation}{34}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Prova di correttezza}{36}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Complessità}{37}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Ricerca del minimo con saturazione}{37}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Computazione distribuita di funzioni}{38}{subsubsection.3.1.4}

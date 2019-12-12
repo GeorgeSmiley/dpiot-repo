@@ -542,7 +542,7 @@
 				\includegraphics[scale=0.3]{img/dfs.png}
 				\caption{Algoritmo DFS 1}
 			\end{figure}
-				\begin{figure}[h!]
+			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.3]{img/dfs2.png}
 				\caption{Algoritmo DFS 2}
@@ -578,7 +578,90 @@
 	In questa sezione è analizzato il contesto delle computazioni distribuite in una topologia in forma di \textbf{albero}. Anche in questo caso valgono le restrizioni standard definite da \textbf{R}, in aggiunta ogni nodo sa se è una \textbf{foglia} o un \textbf{nodo interno} (se ha un solo vicino o più di uno).
 	
 	\subsection{Saturation}  
+		La \textbf{Saturazione} è una tecnica base che può essere utilizzata come strumento di partenza per eseguire computazioni in un sistema distribuito. Il protocollo si declina in 3 parti: \textbf{Attivazione}, \textbf{Saturazione}, \textbf{Risoluzione}.
+		La fase di risoluzione dipenderà dall'applicazione specifica del protocollo (definisce cosa facciamo con i messaggi di saturation ricevuti) anche se solitamente viene utilizzata come fase di notifica per tutte le entità (con lo scopo di ottenere \textit{local termination}). Un protocollo "troncato" come questo è chiamato \textbf{plug-in} (un protocollo nel quale non tutte le entità entrano in stato terminale). Per far si che diventi un protocollo è necessario definire ulteriori azioni da svolgere. \textit{\textbf{Il protocollo può essere avviato da un qualsiasi numero di initiator.}} Vediamo le fasi in dettaglio:
+		\begin{enumerate}
+			\item \textbf{Attivazione}: questa fase è un semplice \textbf{\textit{wake-up}}. Ogni initiator invia un messaggio di wake-up a tutti i suoi vicini e diventa \textit{active}. Ogni non initiator che riceve il messaggio diviene active a sua volta e inoltra il messaggio ai suoi vicini (escluso il mittente del messaggio)). I nodi già attivi ignorano altri messaggi di wake up. In \textbf{tempo finito} tutti i nodi divengono attivi, incluse le foglie (per le assunzione di \textbf{total reliability} e l'assioma di \textbf{finite comunication delay})
+			\item \textbf{Saturazione}: questa fase è inizializzata dalle foglie che inviano il messaggio \textbf{M} di saturazione al loro unico vicino (il parent), entrando così nello stato di \textbf{\textit{processing}}. Invece, ogni nodo intermedio attende di ricevere un messaggio di saturation da tutti i suoi vicini meno uno. All'ultimo vicino rimasto ed identificato dunque come il parent, il nodo intermedio invia un messaggio di saturation (entrando nello stato \textit{processing}). Se un nodo nello stato di processing riceve un messaggio dal parente allora entra nello stato \textit{\textbf{saturated}}.
+			\item \textbf{Risoluzione}: dipende dall'applicazione.	
+		\end{enumerate}	
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.33]{img/sat1.png}
+			\caption{Algoritmo Saturazione 1}
+		\end{figure}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.3]{img/sat2.png}
+			\caption{Algoritmo Saturazione 2}
+		\end{figure}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.3]{img/sat3.png}
+			\caption{Algoritmo Saturazione 3}
+		\end{figure}
+		
+		\subsubsection{Prova di correttezza}
+			\textbf{Lemma}: \textit{Esattamente due nodi in stato di processing diventeranno saturati, inoltre questi nodi sono vicini ma anche l'uno il parent dell'altro}\\
 			
+			\textbf{Prova:} dzal codice sappiamo che un nodo invia il messaggio M solo al suo parente e diviene saturato solo se riceve un messaggio M dal parent. Scegliendo arbitrariamente un nodo della rete $x_{i}$, se attraversiamo gli up-edges (archi che collegano $x_{i}$ al proprio parent) prima o poi troviamo un nodo saturato $s_1$ (questo perchè non ci sono loop nel grafo). Il nodo $s_1$ è diventato saturato perchè ha ricevuto un messaggio da un nodo $s_2$ mentre era nello stato di processing (dunque ha già ricevuto M da un altro nodo quando era active). Dal punto di vista di $s_2$ questo significa che egli è nello stato processing e che considera $s_1$ il suo parent. Dunque, quando $s_2$ riceve un messaggio da $s_1$ questo diventa saturato a sua volta (i due nodi sono l'uno il parent dell'altro). Considerando il caso in cui i nodi saturati sono più di due allora significherebbe che esistono due nodi x,y  saturati per i quali $d(x,y)\leq 2$. Tuttavia se consideriamo un nodo z tra i due nodi x,y vediamo che z non può inviare il messaggio M ad entrambi i nodi e dunque uno dei nodi non può essere saturato. \\
+			
+			\textbf{Importante}: è impredicibile quale coppia di nodi divenga saturata, questo per via dei delay di consegna dei messaggi ( ovviamente incide anche la scelta degli iniziatori).
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/satprov.png}
+				\caption{Algoritmo Saturazione: prova}
+			\end{figure}
+		
+		\subsubsection{Complessità}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/satmess.png}
+				\caption{Algoritmo Saturazione: complessità caso peggiore}
+			\end{figure}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/satmess2.png}
+				\caption{Algoritmo Saturazione: complessità caso generale con n iniziatori}
+			\end{figure}
+		
+		\subsubsection{Ricerca del minimo con saturazione}
+			In questa sezione vediamo come si può implementare la fase di risoluzione del protocollo per la ricerca del minimo. In questa configurazione ogni nodo possiede un valore $v(x)$, al termine dell'algoritmo ogni nodo è consapevole di possedere il valore minimo ed entra nello stato appropriato (\textit{minimum} o \textit{large}). Più entità possono avere il valore minimo.\\
+			Il problema può essere risolto, nel caso di un rooted tree (esiste un nodo speciale che è la radice e abbiamo orientamento degli archi) eseguendo \textbf{convergecast}: a partire dalle foglie i nodi determinano il valore minimo e lo inviano verso la radice. Il minimo è dunque individuato dalla radice che si occupa di comunicarlo in broadcast agli altri nodi. \textbf{\textit{Assumere l'esitenza di una radice è un'assunzione molto forte:  equivale ad assumere l'esistenza di un leader all'interno della topologia.}} \\
+			Per questo motivo usiamo \textbf{saturation} per risolvere il problema senza bisogno di queste informazioni. L'unica modifica effettuata riguarda la fase di processing:
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/mincomp.png}
+				\caption{Ricerca minimo con Saturazione: complessità}
+			\end{figure}
+		
+		\subsubsection{Computazione distribuita di funzioni}
+			Il problema vede la computazione di una funzione all'interno di un sistema nel quale i suoi argomenti sono distribuiti nei nodi della topologia. \\
+			Assumiamo la funzione \textit{f} essere \textit{associativa } e \textit{commutativa}. Questo tipo di funzioni, assieme ai suoi parametri, sono dette \textbf{Semigruppi commutativi}. 
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/semigrup.png}
+				\caption{Semigruppi commutativi}
+			\end{figure}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/distfun.png}
+				\caption{Algoritmo computazione distribuita di funzioni 1}
+			\end{figure}	
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/distfun1.png}
+				\caption{Algoritmo computazione distribuita di funzioni 2}
+			\end{figure}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/distfun1.png}
+				\caption{Computazione distribuita di funzioni: complessità}
+			\end{figure}
+			
+		
+		
 				
 			
 				   
