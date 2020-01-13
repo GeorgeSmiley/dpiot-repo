@@ -20,7 +20,6 @@ public class SimpleTcpClient {
 			BufferedReader from_server = new BufferedReader(new InputStreamReader(client_sock.getInputStream()));
 			sentence = input_user.readLine();
 			output.writeBytes(sentence + "\n");
-			
 			String line;
 			while ((line = from_server.readLine()) != null) {
 				System.out.println("Ricevuto: " + line);

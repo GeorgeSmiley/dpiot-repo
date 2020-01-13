@@ -1,39 +1,105 @@
-\BOOKMARK [1][-]{section.1}{Communication Mechanisms}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Middleware}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Coordinazione diretta}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Remote Procedure Call}{section.1}% 4
-\BOOKMARK [3][-]{subsubsection.1.3.1}{Passaggio di parametri}{subsection.1.3}% 5
-\BOOKMARK [3][-]{subsubsection.1.3.2}{Implementare RPC}{subsection.1.3}% 6
-\BOOKMARK [3][-]{subsubsection.1.3.3}{RPC Asincrono}{subsection.1.3}% 7
-\BOOKMARK [3][-]{subsubsection.1.3.4}{Binding}{subsection.1.3}% 8
-\BOOKMARK [2][-]{subsection.1.4}{Message Oriented Middleware}{section.1}% 9
-\BOOKMARK [3][-]{subsubsection.1.4.1}{Queue Manager}{subsection.1.4}% 10
-\BOOKMARK [3][-]{subsubsection.1.4.2}{Eterogeneità: Message Brokers}{subsection.1.4}% 11
-\BOOKMARK [2][-]{subsection.1.5}{Java RMI}{section.1}% 12
-\BOOKMARK [2][-]{subsection.1.6}{gRPC}{section.1}% 13
-\BOOKMARK [1][-]{section.2}{Basic distributed algorithms}{}% 14
-\BOOKMARK [2][-]{subsection.2.1}{Contesto}{section.2}% 15
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Assiomi}{subsection.2.1}% 16
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Restrizioni}{subsection.2.1}% 17
-\BOOKMARK [3][-]{subsubsection.2.1.3}{Tempo ed Eventi}{subsection.2.1}% 18
-\BOOKMARK [3][-]{subsubsection.2.1.4}{Livelli di Conoscenza}{subsection.2.1}% 19
-\BOOKMARK [2][-]{subsection.2.2}{Broadcast}{section.2}% 20
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Flooding}{subsection.2.2}% 21
-\BOOKMARK [2][-]{subsection.2.3}{Flooding in reti con caratteristiche particolari}{section.2}% 22
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Broadcast in un Hypercube}{subsection.2.3}% 23
-\BOOKMARK [3][-]{subsubsection.2.3.2}{Broadcast in un grafo completo}{subsection.2.3}% 24
-\BOOKMARK [3][-]{subsubsection.2.3.3}{Lower bound}{subsection.2.3}% 25
-\BOOKMARK [2][-]{subsection.2.4}{Spanning tree construction}{section.2}% 26
-\BOOKMARK [3][-]{subsubsection.2.4.1}{Protocollo Shout}{subsection.2.4}% 27
-\BOOKMARK [3][-]{subsubsection.2.4.2}{Correttezza}{subsection.2.4}% 28
-\BOOKMARK [3][-]{subsubsection.2.4.3}{Costo computazionale}{subsection.2.4}% 29
-\BOOKMARK [3][-]{subsubsection.2.4.4}{Possibili migliorie}{subsection.2.4}% 30
-\BOOKMARK [3][-]{subsubsection.2.4.5}{Iniziatore mutliplo}{subsection.2.4}% 31
-\BOOKMARK [3][-]{subsubsection.2.4.6}{SPT: Depth First Search}{subsection.2.4}% 32
-\BOOKMARK [3][-]{subsubsection.2.4.7}{DF: migliorie}{subsection.2.4}% 33
-\BOOKMARK [1][-]{section.3}{Computazione negli alberi}{}% 34
-\BOOKMARK [2][-]{subsection.3.1}{Saturation}{section.3}% 35
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Prova di correttezza}{subsection.3.1}% 36
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Complessità}{subsection.3.1}% 37
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Ricerca del minimo con saturazione}{subsection.3.1}% 38
-\BOOKMARK [3][-]{subsubsection.3.1.4}{Computazione distribuita di funzioni}{subsection.3.1}% 39
+\BOOKMARK [1][-]{section.1}{Introduzione ai sistemi distribuiti}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Intro}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Obiettivi di un sistema distribuito}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Nascondere le latenze di comunicazione}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Java socket}{subsection.1.1}% 5
+\BOOKMARK [1][-]{section.2}{Sistemi Distribuiti }{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Architetture}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Architetture software: layered architecture}{subsection.2.1}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Architetture software: Object-based architecture }{subsection.2.1}% 9
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Architetture software: Service oriented}{subsection.2.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.1.4}{Restful architecture}{subsection.2.1}% 11
+\BOOKMARK [3][-]{subsubsection.2.1.5}{Publish subscribe architecture}{subsection.2.1}% 12
+\BOOKMARK [3][-]{subsubsection.2.1.6}{Tuple space architecture}{subsection.2.1}% 13
+\BOOKMARK [3][-]{subsubsection.2.1.7}{Architetture di sistema: client/server }{subsection.2.1}% 14
+\BOOKMARK [3][-]{subsubsection.2.1.8}{Architettura peer to peer}{subsection.2.1}% 15
+\BOOKMARK [3][-]{subsubsection.2.1.9}{P2P overlay network non strutturata}{subsection.2.1}% 16
+\BOOKMARK [3][-]{subsubsection.2.1.10}{P2P overlay network strutturata}{subsection.2.1}% 17
+\BOOKMARK [2][-]{subsection.2.2}{Jersey}{section.2}% 18
+\BOOKMARK [1][-]{section.3}{Communication Mechanisms}{}% 19
+\BOOKMARK [2][-]{subsection.3.1}{Middleware}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.2}{Coordinazione diretta}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.3}{Remote Procedure Call}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Passaggio di parametri}{subsection.3.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Implementare RPC}{subsection.3.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.3.3}{RPC Asincrono}{subsection.3.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Binding}{subsection.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.4}{Message Oriented Middleware}{section.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Queue Manager}{subsection.3.4}% 28
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Eterogeneità: Message Brokers}{subsection.3.4}% 29
+\BOOKMARK [2][-]{subsection.3.5}{Java RMI}{section.3}% 30
+\BOOKMARK [2][-]{subsection.3.6}{gRPC}{section.3}% 31
+\BOOKMARK [1][-]{section.4}{Basic distributed algorithms}{}% 32
+\BOOKMARK [2][-]{subsection.4.1}{Contesto}{section.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Assiomi}{subsection.4.1}% 34
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Restrizioni}{subsection.4.1}% 35
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Tempo ed Eventi}{subsection.4.1}% 36
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Livelli di Conoscenza}{subsection.4.1}% 37
+\BOOKMARK [2][-]{subsection.4.2}{Broadcast}{section.4}% 38
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Flooding}{subsection.4.2}% 39
+\BOOKMARK [2][-]{subsection.4.3}{Flooding in reti con caratteristiche particolari}{section.4}% 40
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Broadcast in un Hypercube}{subsection.4.3}% 41
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Broadcast in un grafo completo}{subsection.4.3}% 42
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Lower bound}{subsection.4.3}% 43
+\BOOKMARK [2][-]{subsection.4.4}{Spanning tree construction}{section.4}% 44
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Protocollo Shout}{subsection.4.4}% 45
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Correttezza}{subsection.4.4}% 46
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Costo computazionale}{subsection.4.4}% 47
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Possibili migliorie}{subsection.4.4}% 48
+\BOOKMARK [3][-]{subsubsection.4.4.5}{Iniziatore mutliplo}{subsection.4.4}% 49
+\BOOKMARK [3][-]{subsubsection.4.4.6}{SPT: Depth First Search}{subsection.4.4}% 50
+\BOOKMARK [3][-]{subsubsection.4.4.7}{DF: migliorie}{subsection.4.4}% 51
+\BOOKMARK [2][-]{subsection.4.5}{Computazione negli alberi}{section.4}% 52
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Saturation}{subsection.4.5}% 53
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Prova di correttezza}{subsection.4.5}% 54
+\BOOKMARK [3][-]{subsubsection.4.5.3}{Complessità}{subsection.4.5}% 55
+\BOOKMARK [3][-]{subsubsection.4.5.4}{Ricerca del minimo con saturazione}{subsection.4.5}% 56
+\BOOKMARK [3][-]{subsubsection.4.5.5}{Computazione distribuita di funzioni}{subsection.4.5}% 57
+\BOOKMARK [2][-]{subsection.4.6}{Leader Election}{section.4}% 58
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Risultato di impossibilità}{subsection.4.6}% 59
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Election negli alberi}{subsection.4.6}% 60
+\BOOKMARK [3][-]{subsubsection.4.6.3}{Leader election in un anello: All the Way}{subsection.4.6}% 61
+\BOOKMARK [3][-]{subsubsection.4.6.4}{All the way: correttezza e terminazione}{subsection.4.6}% 62
+\BOOKMARK [3][-]{subsubsection.4.6.5}{AsFar \(as it can\)}{subsection.4.6}% 63
+\BOOKMARK [3][-]{subsubsection.4.6.6}{AsFar: terminazione}{subsection.4.6}% 64
+\BOOKMARK [3][-]{subsubsection.4.6.7}{AsFar: complessità}{subsection.4.6}% 65
+\BOOKMARK [3][-]{subsubsection.4.6.8}{Controlled Distances}{subsection.4.6}% 66
+\BOOKMARK [3][-]{subsubsection.4.6.9}{Controlled Distances: correttezza e costo}{subsection.4.6}% 67
+\BOOKMARK [3][-]{subsubsection.4.6.10}{Stage}{subsection.4.6}% 68
+\BOOKMARK [3][-]{subsubsection.4.6.11}{Stage: correttezza e complessità}{subsection.4.6}% 69
+\BOOKMARK [3][-]{subsubsection.4.6.12}{Stages: rimuovere message ordering}{subsection.4.6}% 70
+\BOOKMARK [3][-]{subsubsection.4.6.13}{Stages: correttezza terminazione}{subsection.4.6}% 71
+\BOOKMARK [3][-]{subsubsection.4.6.14}{Alternating Steps}{subsection.4.6}% 72
+\BOOKMARK [3][-]{subsubsection.4.6.15}{Unidirectional o Bidirectional links?}{subsection.4.6}% 73
+\BOOKMARK [2][-]{subsection.4.7}{Yo-Yo: algoritmo distribuito per la ricerca del minimo}{section.4}% 74
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Struttura}{subsection.4.7}% 75
+\BOOKMARK [3][-]{subsubsection.4.7.2}{Terminazione}{subsection.4.7}% 76
+\BOOKMARK [2][-]{subsection.4.8}{Election in una rete dinamica}{section.4}% 77
+\BOOKMARK [3][-]{subsubsection.4.8.1}{The Bully Algorithm: introduzione}{subsection.4.8}% 78
+\BOOKMARK [3][-]{subsubsection.4.8.2}{Bully: algoritmo}{subsection.4.8}% 79
+\BOOKMARK [3][-]{subsubsection.4.8.3}{Elezione in una rete wireless Ad-Hoc}{subsection.4.8}% 80
+\BOOKMARK [3][-]{subsubsection.4.8.4}{Rete Ad Hoc: algoritmo leader election}{subsection.4.8}% 81
+\BOOKMARK [2][-]{subsection.4.9}{Sincronizzazione}{section.4}% 82
+\BOOKMARK [3][-]{subsubsection.4.9.1}{Introduzione}{subsection.4.9}% 83
+\BOOKMARK [3][-]{subsubsection.4.9.2}{Sincronizzazione di clock fisici}{subsection.4.9}% 84
+\BOOKMARK [3][-]{subsubsection.4.9.3}{Network Time Protocol \(NTP\)}{subsection.4.9}% 85
+\BOOKMARK [3][-]{subsubsection.4.9.4}{Clock logici}{subsection.4.9}% 86
+\BOOKMARK [3][-]{subsubsection.4.9.5}{Vector Clocks}{subsection.4.9}% 87
+\BOOKMARK [3][-]{subsubsection.4.9.6}{Mutua esclusione distribuita}{subsection.4.9}% 88
+\BOOKMARK [3][-]{subsubsection.4.9.7}{Centralized Algorithm}{subsection.4.9}% 89
+\BOOKMARK [3][-]{subsubsection.4.9.8}{Traversal Based Algorithm}{subsection.4.9}% 90
+\BOOKMARK [3][-]{subsubsection.4.9.9}{AskAll Algorithm}{subsection.4.9}% 91
+\BOOKMARK [3][-]{subsubsection.4.9.10}{Quorum-based algorithm}{subsection.4.9}% 92
+\BOOKMARK [2][-]{subsection.4.10}{JBotSim }{section.4}% 93
+\BOOKMARK [1][-]{section.5}{IOT: Protocolli livello applicativo}{}% 94
+\BOOKMARK [2][-]{subsection.5.1}{Introduzione}{section.5}% 95
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Mobile Ad-Hoc Network}{subsection.5.1}% 96
+\BOOKMARK [3][-]{subsubsection.5.1.2}{WSN: reti di sensori }{subsection.5.1}% 97
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Internet Of The Things}{subsection.5.1}% 98
+\BOOKMARK [3][-]{subsubsection.5.1.4}{Problemi rilevanti in IOT}{subsection.5.1}% 99
+\BOOKMARK [2][-]{subsection.5.2}{MQTT}{section.5}% 100
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Introduzione MQTT}{subsection.5.2}% 101
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Paradigma Produttore/Consumatore}{subsection.5.2}% 102
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Produttore/consumatore in MQTT}{subsection.5.2}% 103
+\BOOKMARK [3][-]{subsubsection.5.2.4}{QOS in MQTT}{subsection.5.2}% 104
+\BOOKMARK [2][-]{subsection.5.3}{COAP}{section.5}% 105

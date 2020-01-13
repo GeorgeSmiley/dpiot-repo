@@ -18,6 +18,9 @@ public class SimpleTcpServer {
 			ServerSocket server_sock = new ServerSocket(2018);
 			
 			while (true) {
+				System.out.println("----------------------------");
+				System.out.println("In ascolto sulla porta 2018");
+				System.out.println("----------------------------");
 				Socket connection_sock = server_sock.accept();
 				BufferedReader in = new BufferedReader(new InputStreamReader(connection_sock.getInputStream()));
 				DataOutputStream output = new DataOutputStream(connection_sock.getOutputStream());
@@ -25,7 +28,7 @@ public class SimpleTcpServer {
 				client_input = new String(in.readLine());
 				System.out.println("Received: " + client_input);
 				
-				output.writeBytes("something\n");
+				output.writeBytes("Il messaggio è arrivato \n");
 			}   
 								   
 				   //output.writeBytes();
