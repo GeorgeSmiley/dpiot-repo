@@ -1,0 +1,108 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduzione ai sistemi distribuiti}{8}{section.1}
+\contentsline {subsection}{\numberline {1.1}Intro}{8}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Obiettivi di un sistema distribuito}{9}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Nascondere le latenze di comunicazione}{11}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Java socket}{13}{subsubsection.1.1.3}
+\contentsline {section}{\numberline {2}Sistemi Distribuiti }{14}{section.2}
+\contentsline {subsection}{\numberline {2.1}Architetture}{14}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Architetture software: layered architecture}{15}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Architetture software: Object-based architecture }{15}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Architetture software: Service oriented}{16}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Restful architecture}{17}{subsubsection.2.1.4}
+\contentsline {subsubsection}{\numberline {2.1.5}Publish subscribe architecture}{18}{subsubsection.2.1.5}
+\contentsline {subsubsection}{\numberline {2.1.6}Tuple space architecture}{19}{subsubsection.2.1.6}
+\contentsline {subsubsection}{\numberline {2.1.7}Architetture di sistema: client/server }{19}{subsubsection.2.1.7}
+\contentsline {subsubsection}{\numberline {2.1.8}Architettura peer to peer}{21}{subsubsection.2.1.8}
+\contentsline {subsubsection}{\numberline {2.1.9}P2P overlay network non strutturata}{21}{subsubsection.2.1.9}
+\contentsline {subsubsection}{\numberline {2.1.10}P2P overlay network strutturata}{22}{subsubsection.2.1.10}
+\contentsline {subsection}{\numberline {2.2}Jersey}{22}{subsection.2.2}
+\contentsline {section}{\numberline {3}Communication Mechanisms}{24}{section.3}
+\contentsline {subsection}{\numberline {3.1}Middleware}{24}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Coordinazione diretta}{26}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Remote Procedure Call}{26}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Passaggio di parametri}{28}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Implementare RPC}{29}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}RPC Asincrono}{30}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Binding}{31}{subsubsection.3.3.4}
+\contentsline {subsection}{\numberline {3.4}Message Oriented Middleware}{31}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Queue Manager}{34}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Eterogeneità: Message Brokers}{35}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}Java RMI}{35}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}gRPC}{37}{subsection.3.6}
+\contentsline {section}{\numberline {4}Basic distributed algorithms}{38}{section.4}
+\contentsline {subsection}{\numberline {4.1}Contesto}{38}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Assiomi}{40}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Restrizioni}{40}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Tempo ed Eventi}{41}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Livelli di Conoscenza}{42}{subsubsection.4.1.4}
+\contentsline {subsection}{\numberline {4.2}Broadcast}{43}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Flooding}{43}{subsubsection.4.2.1}
+\contentsline {subsection}{\numberline {4.3}Flooding in reti con caratteristiche particolari}{44}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Broadcast in un Hypercube}{44}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Broadcast in un grafo completo}{46}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Lower bound}{46}{subsubsection.4.3.3}
+\contentsline {subsection}{\numberline {4.4}Spanning tree construction}{48}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Protocollo Shout}{48}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Correttezza}{48}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Costo computazionale}{50}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Possibili migliorie}{51}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}Iniziatore mutliplo}{53}{subsubsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}SPT: Depth First Search}{54}{subsubsection.4.4.6}
+\contentsline {subsubsection}{\numberline {4.4.7}DF+}{56}{subsubsection.4.4.7}
+\contentsline {subsubsection}{\numberline {4.4.8}DF++}{57}{subsubsection.4.4.8}
+\contentsline {subsubsection}{\numberline {4.4.9}Smart traversal}{59}{subsubsection.4.4.9}
+\contentsline {subsection}{\numberline {4.5}Computazione negli alberi}{59}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}Saturation}{59}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.2}Prova di correttezza}{60}{subsubsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.3}Complessità}{62}{subsubsection.4.5.3}
+\contentsline {subsubsection}{\numberline {4.5.4}Ricerca del minimo con saturazione}{62}{subsubsection.4.5.4}
+\contentsline {subsubsection}{\numberline {4.5.5}Computazione distribuita di funzioni}{63}{subsubsection.4.5.5}
+\contentsline {subsection}{\numberline {4.6}Leader Election}{64}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Risultato di impossibilità}{65}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}Election negli alberi}{66}{subsubsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.3}Leader election in un anello: All the Way}{67}{subsubsection.4.6.3}
+\contentsline {subsubsection}{\numberline {4.6.4}All the way: correttezza e terminazione}{68}{subsubsection.4.6.4}
+\contentsline {subsubsection}{\numberline {4.6.5}AsFar (as it can)}{70}{subsubsection.4.6.5}
+\contentsline {subsubsection}{\numberline {4.6.6}AsFar: terminazione}{71}{subsubsection.4.6.6}
+\contentsline {subsubsection}{\numberline {4.6.7}AsFar: complessità}{72}{subsubsection.4.6.7}
+\contentsline {subsubsection}{\numberline {4.6.8}Controlled Distances}{73}{subsubsection.4.6.8}
+\contentsline {subsubsection}{\numberline {4.6.9}Controlled Distances: correttezza e costo}{74}{subsubsection.4.6.9}
+\contentsline {subsubsection}{\numberline {4.6.10}Stage}{76}{subsubsection.4.6.10}
+\contentsline {subsubsection}{\numberline {4.6.11}Stage: correttezza e complessità}{77}{subsubsection.4.6.11}
+\contentsline {subsubsection}{\numberline {4.6.12}Stages: rimuovere message ordering}{77}{subsubsection.4.6.12}
+\contentsline {subsubsection}{\numberline {4.6.13}Stages: correttezza terminazione}{79}{subsubsection.4.6.13}
+\contentsline {subsubsection}{\numberline {4.6.14}Alternating Steps}{80}{subsubsection.4.6.14}
+\contentsline {subsubsection}{\numberline {4.6.15}Unidirectional o Bidirectional links?}{80}{subsubsection.4.6.15}
+\contentsline {subsection}{\numberline {4.7}Yo-Yo: algoritmo distribuito per la ricerca del minimo}{83}{subsection.4.7}
+\contentsline {subsubsection}{\numberline {4.7.1}Struttura}{83}{subsubsection.4.7.1}
+\contentsline {subsubsection}{\numberline {4.7.2}Terminazione}{85}{subsubsection.4.7.2}
+\contentsline {subsection}{\numberline {4.8}Election in una rete dinamica}{86}{subsection.4.8}
+\contentsline {subsubsection}{\numberline {4.8.1}The Bully Algorithm: introduzione}{86}{subsubsection.4.8.1}
+\contentsline {subsubsection}{\numberline {4.8.2}Bully: algoritmo}{88}{subsubsection.4.8.2}
+\contentsline {subsubsection}{\numberline {4.8.3}Elezione in una rete wireless Ad-Hoc}{88}{subsubsection.4.8.3}
+\contentsline {subsubsection}{\numberline {4.8.4}Rete Ad Hoc: algoritmo leader election}{90}{subsubsection.4.8.4}
+\contentsline {subsection}{\numberline {4.9}Sincronizzazione}{93}{subsection.4.9}
+\contentsline {subsubsection}{\numberline {4.9.1}Introduzione}{93}{subsubsection.4.9.1}
+\contentsline {subsubsection}{\numberline {4.9.2}Sincronizzazione di clock fisici}{95}{subsubsection.4.9.2}
+\contentsline {subsubsection}{\numberline {4.9.3}Network Time Protocol (NTP)}{96}{subsubsection.4.9.3}
+\contentsline {subsubsection}{\numberline {4.9.4}Clock logici}{98}{subsubsection.4.9.4}
+\contentsline {subsubsection}{\numberline {4.9.5}Vector Clocks}{100}{subsubsection.4.9.5}
+\contentsline {subsubsection}{\numberline {4.9.6}Mutua esclusione distribuita}{101}{subsubsection.4.9.6}
+\contentsline {subsubsection}{\numberline {4.9.7}Centralized Algorithm}{102}{subsubsection.4.9.7}
+\contentsline {subsubsection}{\numberline {4.9.8}Traversal Based Algorithm}{102}{subsubsection.4.9.8}
+\contentsline {subsubsection}{\numberline {4.9.9}AskAll Algorithm}{103}{subsubsection.4.9.9}
+\contentsline {subsubsection}{\numberline {4.9.10}Quorum-based algorithm}{104}{subsubsection.4.9.10}
+\contentsline {subsection}{\numberline {4.10}JBotSim }{104}{subsection.4.10}
+\contentsline {section}{\numberline {5}IOT: Protocolli livello applicativo}{104}{section.5}
+\contentsline {subsection}{\numberline {5.1}Introduzione}{104}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Mobile Ad-Hoc Network}{104}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}WSN: reti di sensori }{107}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Internet Of The Things}{109}{subsubsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.4}Problemi rilevanti in IOT}{109}{subsubsection.5.1.4}
+\contentsline {subsection}{\numberline {5.2}MQTT}{110}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Introduzione MQTT}{110}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Paradigma Produttore/Consumatore}{111}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Produttore/consumatore in MQTT}{113}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}QOS in MQTT}{115}{subsubsection.5.2.4}
+\contentsline {subsection}{\numberline {5.3}COAP}{118}{subsection.5.3}
