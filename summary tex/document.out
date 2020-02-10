@@ -51,57 +51,60 @@
 \BOOKMARK [3][-]{subsubsection.4.4.7}{DF+}{subsection.4.4}% 51
 \BOOKMARK [3][-]{subsubsection.4.4.8}{DF++}{subsection.4.4}% 52
 \BOOKMARK [3][-]{subsubsection.4.4.9}{Smart traversal}{subsection.4.4}% 53
-\BOOKMARK [2][-]{subsection.4.5}{Computazione negli alberi}{section.4}% 54
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Saturation}{subsection.4.5}% 55
-\BOOKMARK [3][-]{subsubsection.4.5.2}{Prova di correttezza}{subsection.4.5}% 56
-\BOOKMARK [3][-]{subsubsection.4.5.3}{Complessità}{subsection.4.5}% 57
-\BOOKMARK [3][-]{subsubsection.4.5.4}{Ricerca del minimo con saturazione}{subsection.4.5}% 58
-\BOOKMARK [3][-]{subsubsection.4.5.5}{Computazione distribuita di funzioni}{subsection.4.5}% 59
-\BOOKMARK [2][-]{subsection.4.6}{Leader Election}{section.4}% 60
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Risultato di impossibilità}{subsection.4.6}% 61
-\BOOKMARK [3][-]{subsubsection.4.6.2}{Election negli alberi}{subsection.4.6}% 62
-\BOOKMARK [3][-]{subsubsection.4.6.3}{Leader election in un anello: All the Way}{subsection.4.6}% 63
-\BOOKMARK [3][-]{subsubsection.4.6.4}{All the way: correttezza e terminazione}{subsection.4.6}% 64
-\BOOKMARK [3][-]{subsubsection.4.6.5}{AsFar \(as it can\)}{subsection.4.6}% 65
-\BOOKMARK [3][-]{subsubsection.4.6.6}{AsFar: terminazione}{subsection.4.6}% 66
-\BOOKMARK [3][-]{subsubsection.4.6.7}{AsFar: complessità}{subsection.4.6}% 67
-\BOOKMARK [3][-]{subsubsection.4.6.8}{Controlled Distances}{subsection.4.6}% 68
-\BOOKMARK [3][-]{subsubsection.4.6.9}{Controlled Distances: correttezza e costo}{subsection.4.6}% 69
-\BOOKMARK [3][-]{subsubsection.4.6.10}{Stage}{subsection.4.6}% 70
-\BOOKMARK [3][-]{subsubsection.4.6.11}{Stage: correttezza e complessità}{subsection.4.6}% 71
-\BOOKMARK [3][-]{subsubsection.4.6.12}{Stages: rimuovere message ordering}{subsection.4.6}% 72
-\BOOKMARK [3][-]{subsubsection.4.6.13}{Stages: correttezza terminazione}{subsection.4.6}% 73
-\BOOKMARK [3][-]{subsubsection.4.6.14}{Alternating Steps}{subsection.4.6}% 74
-\BOOKMARK [3][-]{subsubsection.4.6.15}{Unidirectional o Bidirectional links?}{subsection.4.6}% 75
-\BOOKMARK [2][-]{subsection.4.7}{Yo-Yo: algoritmo distribuito per la ricerca del minimo}{section.4}% 76
-\BOOKMARK [3][-]{subsubsection.4.7.1}{Struttura}{subsection.4.7}% 77
-\BOOKMARK [3][-]{subsubsection.4.7.2}{Terminazione}{subsection.4.7}% 78
-\BOOKMARK [2][-]{subsection.4.8}{Election in una rete dinamica}{section.4}% 79
-\BOOKMARK [3][-]{subsubsection.4.8.1}{The Bully Algorithm: introduzione}{subsection.4.8}% 80
-\BOOKMARK [3][-]{subsubsection.4.8.2}{Bully: algoritmo}{subsection.4.8}% 81
-\BOOKMARK [3][-]{subsubsection.4.8.3}{Elezione in una rete wireless Ad-Hoc}{subsection.4.8}% 82
-\BOOKMARK [3][-]{subsubsection.4.8.4}{Rete Ad Hoc: algoritmo leader election}{subsection.4.8}% 83
-\BOOKMARK [2][-]{subsection.4.9}{Sincronizzazione}{section.4}% 84
-\BOOKMARK [3][-]{subsubsection.4.9.1}{Introduzione}{subsection.4.9}% 85
-\BOOKMARK [3][-]{subsubsection.4.9.2}{Sincronizzazione di clock fisici}{subsection.4.9}% 86
-\BOOKMARK [3][-]{subsubsection.4.9.3}{Network Time Protocol \(NTP\)}{subsection.4.9}% 87
-\BOOKMARK [3][-]{subsubsection.4.9.4}{Clock logici}{subsection.4.9}% 88
-\BOOKMARK [3][-]{subsubsection.4.9.5}{Vector Clocks}{subsection.4.9}% 89
-\BOOKMARK [3][-]{subsubsection.4.9.6}{Mutua esclusione distribuita}{subsection.4.9}% 90
-\BOOKMARK [3][-]{subsubsection.4.9.7}{Centralized Algorithm}{subsection.4.9}% 91
-\BOOKMARK [3][-]{subsubsection.4.9.8}{Traversal Based Algorithm}{subsection.4.9}% 92
-\BOOKMARK [3][-]{subsubsection.4.9.9}{AskAll Algorithm}{subsection.4.9}% 93
-\BOOKMARK [3][-]{subsubsection.4.9.10}{Quorum-based algorithm}{subsection.4.9}% 94
-\BOOKMARK [2][-]{subsection.4.10}{JBotSim }{section.4}% 95
-\BOOKMARK [1][-]{section.5}{IOT: Protocolli livello applicativo}{}% 96
-\BOOKMARK [2][-]{subsection.5.1}{Introduzione}{section.5}% 97
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Mobile Ad-Hoc Network}{subsection.5.1}% 98
-\BOOKMARK [3][-]{subsubsection.5.1.2}{WSN: reti di sensori }{subsection.5.1}% 99
-\BOOKMARK [3][-]{subsubsection.5.1.3}{Internet Of The Things}{subsection.5.1}% 100
-\BOOKMARK [3][-]{subsubsection.5.1.4}{Problemi rilevanti in IOT}{subsection.5.1}% 101
-\BOOKMARK [2][-]{subsection.5.2}{MQTT}{section.5}% 102
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Introduzione MQTT}{subsection.5.2}% 103
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Paradigma Produttore/Consumatore}{subsection.5.2}% 104
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Produttore/consumatore in MQTT}{subsection.5.2}% 105
-\BOOKMARK [3][-]{subsubsection.5.2.4}{QOS in MQTT}{subsection.5.2}% 106
-\BOOKMARK [2][-]{subsection.5.3}{COAP}{section.5}% 107
+\BOOKMARK [3][-]{subsubsection.4.4.10}{Wake-up}{subsection.4.4}% 54
+\BOOKMARK [2][-]{subsection.4.5}{Computazione negli alberi}{section.4}% 55
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Saturation}{subsection.4.5}% 56
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Prova di correttezza}{subsection.4.5}% 57
+\BOOKMARK [3][-]{subsubsection.4.5.3}{Complessità}{subsection.4.5}% 58
+\BOOKMARK [3][-]{subsubsection.4.5.4}{Ricerca del minimo con saturazione}{subsection.4.5}% 59
+\BOOKMARK [3][-]{subsubsection.4.5.5}{Computazione distribuita di funzioni}{subsection.4.5}% 60
+\BOOKMARK [2][-]{subsection.4.6}{Leader Election}{section.4}% 61
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Risultato di impossibilità}{subsection.4.6}% 62
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Election negli alberi}{subsection.4.6}% 63
+\BOOKMARK [3][-]{subsubsection.4.6.3}{Leader election in un anello: All the Way}{subsection.4.6}% 64
+\BOOKMARK [3][-]{subsubsection.4.6.4}{All the way: correttezza e terminazione}{subsection.4.6}% 65
+\BOOKMARK [3][-]{subsubsection.4.6.5}{AsFar \(as it can\)}{subsection.4.6}% 66
+\BOOKMARK [3][-]{subsubsection.4.6.6}{AsFar: terminazione}{subsection.4.6}% 67
+\BOOKMARK [3][-]{subsubsection.4.6.7}{AsFar: complessità}{subsection.4.6}% 68
+\BOOKMARK [3][-]{subsubsection.4.6.8}{Controlled Distances}{subsection.4.6}% 69
+\BOOKMARK [3][-]{subsubsection.4.6.9}{Controlled Distances: correttezza e costo}{subsection.4.6}% 70
+\BOOKMARK [3][-]{subsubsection.4.6.10}{Stage}{subsection.4.6}% 71
+\BOOKMARK [3][-]{subsubsection.4.6.11}{Stage: correttezza e complessità}{subsection.4.6}% 72
+\BOOKMARK [3][-]{subsubsection.4.6.12}{Stages: rimuovere message ordering}{subsection.4.6}% 73
+\BOOKMARK [3][-]{subsubsection.4.6.13}{Stages: correttezza terminazione}{subsection.4.6}% 74
+\BOOKMARK [3][-]{subsubsection.4.6.14}{Alternating Steps}{subsection.4.6}% 75
+\BOOKMARK [3][-]{subsubsection.4.6.15}{Unidirectional o Bidirectional links?}{subsection.4.6}% 76
+\BOOKMARK [2][-]{subsection.4.7}{Yo-Yo: algoritmo distribuito per la ricerca del minimo}{section.4}% 77
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Struttura}{subsection.4.7}% 78
+\BOOKMARK [3][-]{subsubsection.4.7.2}{Terminazione}{subsection.4.7}% 79
+\BOOKMARK [2][-]{subsection.4.8}{Election in una rete dinamica}{section.4}% 80
+\BOOKMARK [3][-]{subsubsection.4.8.1}{The Bully Algorithm: introduzione}{subsection.4.8}% 81
+\BOOKMARK [3][-]{subsubsection.4.8.2}{Bully: algoritmo}{subsection.4.8}% 82
+\BOOKMARK [3][-]{subsubsection.4.8.3}{Elezione in una rete wireless Ad-Hoc}{subsection.4.8}% 83
+\BOOKMARK [3][-]{subsubsection.4.8.4}{Rete Ad Hoc: algoritmo leader election}{subsection.4.8}% 84
+\BOOKMARK [2][-]{subsection.4.9}{Sincronizzazione}{section.4}% 85
+\BOOKMARK [3][-]{subsubsection.4.9.1}{Introduzione}{subsection.4.9}% 86
+\BOOKMARK [3][-]{subsubsection.4.9.2}{Sincronizzazione di clock fisici}{subsection.4.9}% 87
+\BOOKMARK [3][-]{subsubsection.4.9.3}{Network Time Protocol \(NTP\)}{subsection.4.9}% 88
+\BOOKMARK [3][-]{subsubsection.4.9.4}{Clock logici}{subsection.4.9}% 89
+\BOOKMARK [3][-]{subsubsection.4.9.5}{Vector Clocks}{subsection.4.9}% 90
+\BOOKMARK [3][-]{subsubsection.4.9.6}{Mutua esclusione distribuita}{subsection.4.9}% 91
+\BOOKMARK [3][-]{subsubsection.4.9.7}{Centralized Algorithm}{subsection.4.9}% 92
+\BOOKMARK [3][-]{subsubsection.4.9.8}{Traversal Based Algorithm}{subsection.4.9}% 93
+\BOOKMARK [3][-]{subsubsection.4.9.9}{AskAll Algorithm}{subsection.4.9}% 94
+\BOOKMARK [3][-]{subsubsection.4.9.10}{Quorum-based algorithm}{subsection.4.9}% 95
+\BOOKMARK [2][-]{subsection.4.10}{JBotSim }{section.4}% 96
+\BOOKMARK [1][-]{section.5}{IOT: Protocolli livello applicativo}{}% 97
+\BOOKMARK [2][-]{subsection.5.1}{Introduzione}{section.5}% 98
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Mobile Ad-Hoc Network}{subsection.5.1}% 99
+\BOOKMARK [3][-]{subsubsection.5.1.2}{WSN: reti di sensori }{subsection.5.1}% 100
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Internet Of The Things}{subsection.5.1}% 101
+\BOOKMARK [3][-]{subsubsection.5.1.4}{Problemi rilevanti in IOT}{subsection.5.1}% 102
+\BOOKMARK [2][-]{subsection.5.2}{MQTT}{section.5}% 103
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Introduzione MQTT}{subsection.5.2}% 104
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Paradigma Produttore/Consumatore}{subsection.5.2}% 105
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Produttore/consumatore in MQTT}{subsection.5.2}% 106
+\BOOKMARK [3][-]{subsubsection.5.2.4}{QOS in MQTT}{subsection.5.2}% 107
+\BOOKMARK [2][-]{subsection.5.3}{COAP}{section.5}% 108
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Introduction}{subsection.5.3}% 109
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Coap}{subsection.5.3}% 110

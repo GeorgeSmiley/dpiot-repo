@@ -718,7 +718,7 @@
 		Un algoritmo che implementi il broadcast in un sistema distribuito varia la sua efficienza in base alla topologia di rete. Vediamo alcuni casi:
 		\subsubsection{Broadcast in un Hypercube}
 			Per $k=1$ un hypercube è un grafo che presenta due nodi collegati da un link.
-			Un Hypercube $H_k$ di dimensione $k>1$ è ottenuto prendendo due hypercube di dimensione $k-1-H^{1}_{k-1}$ e dimensione $H_{k-1}$ collegando i nodi con nome uguale con un link etichettato. I nuovi nomi dei nodi sono ottenuti aggiungendo il prefisso 1 o il prefisso 0 ai nomi precedenti. Le label dei link sono ottenute contando i bit di differenza tra il nome dei due nodi collegati. Le etichette sono simmetriche rispetto ai nodi connessi dal link\\
+			Un Hypercube $H_k$ di dimensione $k>1$ è ottenuto prendendo due hypercube di dimensione $k-1-H^{1}_{k-1}$ e dimensione $H_{k-1}$ collegando i nodi con nome uguale con un link etichettato. I nuovi nomi dei nodi sono ottenuti aggiungendo il prefisso 1 o il prefisso 0 ai nomi precedenti. Le label dei link diviene k.  Le etichette sono simmetriche rispetto ai nodi connessi dal link\\
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.35]{img/hyper.png}
@@ -739,7 +739,14 @@
 				\item Un nodo che riceve un mesaggio dal link $l$, lo invia solo ai link con etichetta $l^{1}<l$ 
 			\end{enumerate}
 			Con questa modifica il flooding costerà soltanto (n-1) (messaggi).\\
-			La \textbf{correttezza} dell'algoritmo è data dal seguente lemma: \textit{per ogni paio di nodi x,y esiste un path unico di etichette decrescenti}.
+			La \textbf{correttezza} dell'algoritmo è data dal seguente lemma: \textit{per ogni paio di nodi x,y esiste un path unico di etichette decrescenti (vedi immagine).}\\
+			\textbf{Dimostrazione}:
+			\begin{itemize}
+				\item Consideriamo due nodi x e y con etichette $$H_x[x_k,x_{k-1},...,x_0] $$ $$H_y[y_k,y_{k-1},...,y_0] $$. Se $x\neq y$ allora abbiamo un numero di cifre $t>0$ per cui le due etichette differiscono.
+				\item Consideriamo le etichette leggendole da sinistra a destra $$j_1,j_2,...,j_t$$ con $$j_i>j_{i+1} $$
+				\item Se consideriamo adesso la sequenza di nodi $$v_0,v_1,...v_t $$ si ha che $v_i$ differisce da $v_{i+1}$ solo di una cifra ovvero la posizione $j_{i+1}$.
+				\item Se $v_0 = x$ e $v_t = y$ si ha che le loro etichette differiscono in t posizioni e che i cammino di etichette è dunque decrescente 
+			\end{itemize}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.20]{img/hyper3.png}
@@ -759,7 +766,7 @@
 		\end{figure}
 		\subsubsection{Lower bound}
 			Torniamo al caso generale del broadcast e cerchiamo una limitazione inferiore per la sua complessità.\\ \textbf{Teorema}:\\
-			\textit{Ogni algoritmo di broadcast richiede, nel caso pessimo, O(m) messaggi}.\\
+			\textit{Ogni algoritmo di broadcast richiede (assunto iniziatore unico), nel caso pessimo, O(m) messaggi}.\\
 			La prova avviene per contraddizione: sia A un algoritmo che esegue broadcast in meno di m(G) messaggi. In questo caso abbiamo almeno un link in G dove nessun messaggio inviato. Prendiamo quindi un grafo G nel quale esiste un arco, definito dai nodi x e y, sul quale non si scambiano messaggi. Creiamo da G un grafo $G'$ eliminando l'arco tra x e y aggiungendo un nodo z e collegando il nodo z con due archi a x e y. Se eseguiamo l'algoritmo con gli stessi delay di consegna e stessi stati, x e y non comunicano mai con z che non riceve pertanto l'informazione. ASSURDO.
 				
 			\begin{figure}[h!]
@@ -942,11 +949,7 @@
 			Per quanto riguarda la complessità in tempo abbiamo che i messaggi Token e visited sono inviati nello stesso momento (non aspettiamo più gli ack) così come i return (qualora non ci sia nessun vicino a cui inoltrare il token). Pertanto risparmiamo $2n $ unità temporali da sottrarre alla complessità in tempo di DF+:
 			$$4n-2-2n = 2n-2 $$
 			Dovremmo considerare i possibili errori ma la complessità ideale in tempo è calcolata in un contesto di sincronia pertanto gli errori dovuti ai delay non si contano.
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=0.3]{img/conf.png}
-				\caption{Complessità DF a confronto}
-			\end{figure}
+			
 		\subsubsection{Smart traversal}
 			\textbf{Osservazione: ogni algoritmo che risolve il problema dell'attraversamento di un albero risolve anche il problema del broadcast (anche se magari non molto efficiente, mentre non è vero il contrario)}. Per esempio \textbf{flooding viola il requisito di \textit{sequenzialità} che si ha per una visita di un albero}. 
 			Possiamo utilizzare duqnue  algoritmo shout che di fatto è un flood + reply (dunque un broadcast) prima di eseguire la visita in profondità:
@@ -955,6 +958,38 @@
 				\item Si esegue visita in profondità. 2(n-1)
 				\item per un totale di $2(m+n-1)$
 			\end{itemize}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/conf.png}
+				\caption{Complessità DF a confronto}
+			\end{figure}
+		\subsubsection{Wake-up}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.3]{img/wake.png}
+				\caption{Complessità DF a confronto}
+			\end{figure}
+			I sistemi distribuiti svolgono operazione che potenzialmente richiedono la partecipazione attiva di tutti i nodi della rete. Abbiamo dunque bisogno di un procedura preliminare che al suo completamento restituisce una topologia nella quale tutti i nodi sono \textbf{awake}: si utilizza il protocollo \textbf{Wake-up}. Il protocollo è inizializzato dalle unità che sono indipendentemente già attive e dunque si prevede la possibilità di \textbf{iniziatori multipli}.
+			\begin{itemize}
+				\item \textbf{Broadcast} è un wake up con multipli iniziatori
+				\item wake up è un broadcast con la possibilità di avere iniziatori multipli
+			\end{itemize}
+			Per quanto riguarda la complessità si ha dunque:
+			\begin{itemize}
+				\item \textbf{lower bound}: O(m) (in  tempo O(d));
+				\item si utilizza un'algoritmo di flooding generico $2m-n+1$, considerando k iniziatori 	$$2m-n+k^*$$
+			\end{itemize}
+		  	Per quanto riguarda \textbf{topologie specifiche}:
+		  	\begin{itemize}
+		  		\item \textbf{Alberi:} nel caso di un iniziatore avremmo un costo in messaggi di (n-1), se ognuna delle entità inizia in modo indipendente abbiamo il caso pessimo $2(n-1)-n+n =  2(n-1)$.  In generale la complessità è $$2m-n+k^*=2(n-1)-n+k^*=n+k^*-2$$
+		  		\item \textbf{Hypercube:} sappiamo che possiamo sfruttare le proprietà degli hypercube per realizzare un algoritmo di broadcast che ha comlessità O(n). Tuttavia per quanto riguarda il broadcast (iniziatori multipli) la complessità è di O(nlogn). 
+		  	\end{itemize}
+	  		\begin{figure}[h!]
+	  			\centering
+	  			\includegraphics[scale=0.3]{img/wak.png}
+	  			\caption{Complessità wake up in reti speciali}
+	  		\end{figure}
+			
 			
 \subsection{Computazione negli alberi}		
 	In questa sezione è analizzato il contesto delle computazioni distribuite in una topologia in forma di \textbf{albero}. Anche in questo caso valgono le restrizioni standard definite da \textbf{R}, in aggiunta ogni nodo sa se è una \textbf{foglia} o un \textbf{nodo interno} (se ha un solo vicino o più di uno).
@@ -1218,7 +1253,7 @@
 				\item non abbiamo bisogno dell'ordinamento per i messaggi (i messaggi possono essere di stage differenti)
 			\end{itemize}
 			\begin{itemize}
-				\item \textbf{Messaggi}: se la distanza è raddoppiata ad ogni stage $$dis(i) =2^{i-1}$$ allora la complessità è $O(nlog(n))$
+				\item \textbf{Messaggi}: se la distanza è raddoppiata ad ogni stage $$dis(i) =2^{i-1}$$ allora la complessità è $O(nlog(n))$ 
 				\item \textbf{Tempo}: $2dis(i)$ tempo necessario al messaggio con l'id più piccolo per raggiungere di nuovo il mittente. Per la notifica finale il tempo necessario è $2n$.
 				\item in totale $$2n+\sum_{i=1}2dis(i) = O(n) $$ 
 			\end{itemize}
@@ -1288,12 +1323,15 @@
 			\end{figure}
 		
 		\subsubsection{Alternating Steps}
-			Assunzioni per il protocollo: \textbf{Different ids}, \textbf{Bidirectional link and sense of direction}, local orientation, Message ordering.
+			Assunzioni per il protocollo: \textbf{Different ids}, \textbf{Bidirectional link and sense of direction}, local orientation, Message ordering.\\ù
+			Il protocollo rappresenta una versione "rallentata" di stages.
 			\begin{itemize}
 				\item Ogni entità invia un messaggio alla sua destra contenente il proprio id.
 				\item Ogni entità compara l'id ricevuto dalla sua sinistra con il proprio: diviene passiva se l'id ricevuto è più piccolo.
 				\item tutte le unità che rimangono attive allo stage successivo inviano un messaggio alla loro sinistra con confronti analoghi a quelli visti nello step precedente: si ripetono questi passaggi fino all'elezione del leader (l'entità riceve indietro i propri messaggi). Complessità in figura.
 			\end{itemize}
+			Per quanto riguarda la \textbf{correttezza} abbiamo le consuete affermazioni: l'entità con l'id più basso non sarà mai eliminata mentre quella con id più alti saranno eliminati ad ogni passo. Le entità decrescono in senso monotonico ad ogni round. \\
+			\textbf{Complessità}
 			
 			\begin{figure}[h!]
 				\centering
@@ -1331,9 +1369,19 @@
 			In caso positivo dovremmo, al momento dell'implementazione, investire in ulteriore hardware per le comunicazioni (full duplex lines).\\
 			\textbf{La risposta è NO!}
 			Facciamo vedere come è possibile simulare uno di questi algoritmi (Stages, sul libro si trovano tutti) utilizzando link unidirezionali.
-			\textbf{Unidirectional Stages}
+			\textbf{Unidirectional Stages}\\ù
+			Dividiamo l'operazione \textit{invia in entrambe le direzioni} in due sotto operazioni:
+			\begin{itemize}
+				\item Invio il valore in una direzione
+				\item Invio nella stessa direzione il valore che ricevo dalla direzione opposta
+			\end{itemize}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.40]{img/uni.png}
+				\caption{Alternating steps complessità 2}
+			\end{figure}
+			Nella versioni bidirezionale e unidirezionale le entità hanno dopo il primo passo gli stessi valori con cui prendere una decisione \textbf{ solo che queste sono spostate sul candidato successivo} 
 			
-			FINIRE CON UNIDIRECTIONAL.
 			
 	\subsection{Yo-Yo: algoritmo distribuito per la ricerca del minimo}
 		
@@ -1358,7 +1406,7 @@
 					\item Quando un nodo invia un NO ad un suo in-neighbor \textbf{inverte la direzione dei link.}
 					\item Quando un nodo riceve un NO su un link, ruota la direzione di quel link.
 				\end{enumerate}
-				Ogni sources che riceve un NO smette di essere una source e diventa un sink, alcuni sink diventano nodi interni e alcuni nodi interni divetano sink. \textbf{Il numero delle sources decresce ad ogni iterazione.}
+				Ogni sources che riceve un NO smette di essere una source e diventa un sink, alcuni sink diventano nodi interni e alcuni nodi interni diventano sink. \textbf{Il numero delle sources decresce ad ogni iterazione.} 
 			 
 			\end{itemize}
 		
@@ -1371,6 +1419,16 @@
 				\centering
 				\includegraphics[scale=0.30]{img/dpi.png}
 				\caption{DAG ottenuto con la fase di setup}
+			\end{figure}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.55]{img/yo.png}
+				\caption{Dalle source ai sink}
+			\end{figure}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.55]{img/yod.png}
+				\caption{Dai sink alle sources}
 			\end{figure}
 		
 		\subsubsection{Terminazione}
@@ -1386,6 +1444,7 @@
 			\begin{enumerate}
 				\item Se un sink è una foglia allora è inutile (il padre potrebbe diventare un sink);
 				\item Se un nodo riceve, nella prima fase, lo stesso valore da molti in neighbors allora può chiedere a tutti tranne uno di eliminare i propri links.
+				\item \textbf{Se un dag ha una singola source dopo un'iterazione sarà composto da un solo nodo la source stessa: TERMINAZIONE.}
 			\end{enumerate}
 			Il pruning avviene nella fase di voto inserendo informazioni all'interno del messaggio.
 			\begin{figure}[h!]
@@ -1659,15 +1718,15 @@
     			\caption{Problema logical clock}
     		\end{figure}
     	\subsubsection{Vector Clocks}
-    		I vector clock permettono di avere una rappresentazione più dettagliata di cosa un nodo sa riguardo gli eventi di altre entità:
+    		I vector clock permettono di avere una rappresentazione più dettagliata di cosa un nodo sa riguardo gli eventi di altre entità ( le famose relazioni di causalità che i logical clock non riescono a rappresentare):
     		\begin{itemize}
     			\item $VC_x[x]$ è il numero di eventi che occorrono in x (clock logico di x);
     			\item $VC_x[x]=k$ significa che x è a conoscenza del fatto che k eventi sono occorsi in $y$;
     		\end{itemize}
     		Vediamo adesso l'algoritmo:
     		\begin{enumerate}
-    			\item Prima di computare un evento $VC_x[x] = VC_x[x]+1$;
-    			\item Quando x invia un messaggio \textbf{M}, setta il timestamp TS(M) a $VC_x$ 
+    			\item Prima di computare un evento x esegue: $VC_x[x] = VC_x[x]+1$ ovvero aggiorna la posizione del vector clock relativa a se stessa ;
+    			\item Quando x invia un messaggio \textbf{M}, setta il timestamp TS(M) a $VC_x$ ovvero allega il nuovo timestamp al messaggio.
     			\item Quando x riceve un messaggio M da y, modifica il suo vettore locale $VC_x[i] = max(VC_x[i],TS(M)[i])$ per ogni k, ed esegue lo step 1 prima di processare il messaggio $M$.
     		\end{enumerate}
     		\begin{itemize}
@@ -1997,34 +2056,23 @@
     			\item MQTT si affida, al livello sottostante, a TCP che non risulta essere particolarmente leggero se rapportato alle capacità dei device IOT. Infatti richiede molto più risorse rispetto a UDP, i tempi per stabilire una connessione sono più lunghi. Questa richiesta di risorse consuma molta energia, ciò può essere inaccettabile se ci si rapporta a dispositivi con batteria.    
     		\end{itemize}
     \subsection{COAP}
-    	Coap è un protocollo a livello applicazione per un constrained environment.
+    	\subsubsection{Introduction}
+    		Nell'internet of the things la rete non è più semplice veicolo di messaggio ma è utilizzata per realizzare e comporre servizi.
+    		
+    	\subsubsection{Coap}
+    	Coap è un protocollo a livello applicazione per un constrained environment. Per constrained indichiamo la quantità ridotta di risorse che caratterizza i dispositivi IOT. L'idea è dunque quella di permettere comunicazione cooperazione di questo tipo di dispositivi con modalità e costrutti tipici di HTTP, che però rappresenterebbe una soluzione troppo pesante nel contesto citato. A differenza di HTTP il protocollo è \textbf{completamente asincrono}.
     	\begin{figure}[h!]
     		\centering
     		\includegraphics[scale=0.4]{img/coap.png}
-    		\caption{Modello COAP	}
+    		\caption{Pila COAP	}
     	\end{figure}
     	\begin{figure}[h!]
     		\centering
     		\includegraphics[scale=0.4]{img/coapstack.png}
-    		\caption{stack coap	}
+    		\caption{Dal web ad un constrained environment	}
     	\end{figure}
-    	Coap è un efficiente protocollo REST ideale per dispositivi e reti limitate e specializzato nella comunicazione M2M. Lavora bene con HTTP ma non ne costituisce un rimpiazzo ne una compressione
-    	
-    		
-    			
-    			
-    			
-    			
-    		
-	   				
-			
-			
-			
-			
-			
-			
-		
-		
+    	Coap è un efficiente protocollo REST ideale per dispositivi e reti limitate e specializzato nella comunicazione M2M. \\
+    	Coap può essere utilizzato per mediare una comunicazione tra la rete web, che utilizza i la pila classica di rete, ad un ambiente contrained. L'idea è quella di utilizzare un nodo sink che implementi COAP e che comunichi con l'esterno della rete, in questo modo i nodi, comunicano tra di loro tramite coap, ma hanno comunque un'interfaccia per comunicare con l'esterno. COAP è realizzato per comunicare attraverso una logica REST ed è per questo che comunica bene con HTTP, di cui tuttavia non rappresenta un sostituto. \textbf{COAP mette quindi a disposizione un protocollo di trasferimento embedded (coap: invece che http:)}
 			
 			
 			
